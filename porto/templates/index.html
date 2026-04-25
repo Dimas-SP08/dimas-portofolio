@@ -1,0 +1,744 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ismail | Design & Code Portfolio</title>
+    
+    <!-- Google Fonts: Inter untuk clean modern look -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Phosphor Icons -->
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+
+    <!-- Tailwind Config & Custom CSS -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            bg: '#111111',       // Deep Charcoal / Almost Black
+                            surface: '#1A1A1A',  // Lighter Charcoal for cards
+                            text: '#F3F4F6',     // Off-white text
+                            muted: '#9CA3AF',    // Gray text
+                            accent: '#E07A5F',   // Soft Terracotta / Peach accent
+                            line: '#333333'      // Subtle line color
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                    letterSpacing: {
+                        widest: '.25em',
+                        mega: '.5em',
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        body {
+            background-color: #111111;
+            color: #F3F4F6;
+        }
+
+        /* Editorial Vertical Lines (Decorative) */
+        .editorial-line {
+            width: 1px;
+            background-color: #333333;
+            height: 100%;
+            position: absolute;
+            top: 0;
+            z-index: 0;
+        }
+
+        /* Custom Scrollbar Minimalist */
+        ::-webkit-scrollbar { width: 6px; }
+        ::-webkit-scrollbar-track { background: #111111; }
+        ::-webkit-scrollbar-thumb { background: #333333; }
+        ::-webkit-scrollbar-thumb:hover { background: #E07A5F; }
+
+        /* Minimalist Card Hover */
+        .mag-card {
+            transition: all 0.4s ease;
+            border: 1px solid transparent;
+        }
+        .mag-card:hover {
+            border-color: #333333;
+            background-color: #161616;
+            transform: translateY(-5px);
+        }
+    </style>
+</head>
+<body class="font-sans antialiased selection:bg-brand-accent selection:text-white relative">
+
+    <!-- Decorative Background Lines -->
+    <div class="fixed inset-0 pointer-events-none flex justify-between max-w-7xl mx-auto px-6 lg:px-8 opacity-30">
+        <div class="editorial-line left-6 lg:left-8"></div>
+        <div class="editorial-line left-1/4 hidden md:block"></div>
+        <div class="editorial-line left-2/4 hidden md:block"></div>
+        <div class="editorial-line left-3/4 hidden md:block"></div>
+        <div class="editorial-line right-6 lg:right-8"></div>
+    </div>
+
+    <nav class="fixed w-full z-[60] bg-[#111111]/90 backdrop-blur-md border-b border-brand-line transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-6 lg:px-8 relative z-[60]">
+            <div class="flex items-center justify-between h-20">
+                
+                <div class="flex-shrink-0">
+                    <a href="#" class="text-xl tracking-widest uppercase flex items-baseline">
+                        <span class="font-bold text-white">DIMAS</span>
+                        <span class="font-light text-brand-muted ml-1">SP</span>
+                        <span class="text-brand-accent font-bold">.</span>
+                    </a>
+                </div>
+
+                <div class="hidden md:block">
+                    <div class="ml-10 flex items-baseline space-x-10">
+                        <a href="#home" class="text-white hover:text-brand-accent text-xs tracking-widest uppercase transition-colors">Home</a>
+                        <a href="#about" class="text-brand-muted hover:text-brand-accent text-xs tracking-widest uppercase transition-colors">About</a>
+                        <a href="#services" class="text-brand-muted hover:text-brand-accent text-xs tracking-widest uppercase transition-colors">Services</a>
+                        <a href="#projects" class="text-brand-muted hover:text-brand-accent text-xs tracking-widest uppercase transition-colors">Works</a>
+                        <a href="#contact" class="text-brand-accent hover:text-white text-xs tracking-widest uppercase transition-colors">Contact</a>
+                    </div>
+                </div>
+
+                <div class="md:hidden flex items-center">
+                    <button id="mobile-menu-btn" class="text-brand-muted hover:text-white focus:outline-none p-2 transition-colors relative z-[70]">
+                        <i id="menu-icon" class="ph ph-list text-3xl"></i>
+                    </button>
+                </div>
+
+            </div>
+        </div>
+
+        <div id="mobile-backdrop" class="fixed inset-0 bg-black/60 backdrop-blur-sm z-[40] hidden opacity-0 transition-opacity duration-300"></div>
+
+        <div id="mobile-menu" class="fixed top-0 right-0 h-screen w-64 bg-[#141414] border-l border-brand-line z-[50] transform translate-x-full transition-transform duration-300 ease-in-out shadow-2xl flex flex-col">
+            
+            <div class="h-24"></div>
+
+            <div class="flex flex-col space-y-6 px-8">
+                <a href="#home" class="mobile-link text-base tracking-widest text-white uppercase hover:text-brand-accent transition-colors">Home</a>
+                <a href="#about" class="mobile-link text-base tracking-widest text-brand-muted uppercase hover:text-brand-accent transition-colors">About</a>
+                <a href="#services" class="mobile-link text-base tracking-widest text-brand-muted uppercase hover:text-brand-accent transition-colors">Services</a>
+                <a href="#projects" class="mobile-link text-base tracking-widest text-brand-muted uppercase hover:text-brand-accent transition-colors">Works</a>
+                <a href="#contact" class="mobile-link text-base tracking-widest text-brand-accent uppercase hover:text-white transition-colors">Contact</a>
+            </div>
+            
+            <div class="mt-auto pb-10 flex gap-6 px-8 border-t border-brand-line/50 pt-8">
+                <a href="#" class="text-brand-muted hover:text-brand-accent transition-colors"><i class="ph ph-linkedin-logo text-2xl"></i></a>
+                <a href="#" class="text-brand-muted hover:text-white transition-colors"><i class="ph ph-github-logo text-2xl"></i></a>
+                <a href="#" class="text-brand-muted hover:text-brand-accent transition-colors"><i class="ph ph-instagram-logo text-2xl"></i></a>
+            </div>
+        </div>
+    </nav>
+    <!-- HERO SECTION -->
+    <section id="home" class="relative pt-32 pb-20 lg:pt-0 lg:pb-0 min-h-screen flex items-center justify-center overflow-hidden">
+        
+        <div class="absolute top-1/4 -left-40 w-[500px] h-[500px] bg-brand-accent/10 rounded-full mix-blend-screen filter blur-[120px] opacity-60 z-0 pointer-events-none"></div>
+
+        <div class="relative z-10 max-w-7xl mx-auto px-6 lg:px-8 w-full">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-24 items-center">
+
+                <div class="order-2 lg:order-1 flex flex-col justify-center relative z-20">
+                    
+                    <div class="inline-flex items-center gap-3 mb-6 px-4 py-2 rounded-full border border-white/10 bg-white/5 backdrop-blur-md w-fit shadow-[0_4px_24px_-8px_rgba(0,0,0,0.5)]">
+                        <span class="relative flex h-2 w-2">
+                            <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-brand-accent opacity-75"></span>
+                            <span class="relative inline-flex rounded-full h-2 w-2 bg-brand-accent"></span>
+                        </span>
+                        <h2 class="text-brand-muted text-[10px] tracking-[0.3em] uppercase font-medium">Hello, I'm</h2>
+                    </div>
+
+                    <h1 class="text-5xl md:text-7xl lg:text-[6rem] leading-[1.05] tracking-tight mb-6">
+                        <span class="font-extrabold text-white block drop-shadow-lg">Dimas</span>
+                        <span class="font-light text-transparent bg-clip-text bg-gradient-to-r from-gray-300 to-gray-600 block">Satria Pasha<span class="text-brand-accent font-bold">.</span></span>
+                    </h1>
+
+                    <h3 class="text-xl md:text-2xl text-brand-muted font-light italic mb-8 border-l-2 border-brand-accent pl-4">
+                        Digital Architect & Software Engineer
+                    </h3>
+
+                    <p class="text-sm md:text-base text-brand-muted max-w-md mb-10 leading-relaxed">
+                        Membangun jembatan antara presisi arsitektur dan logika algoritma. Spesialis dalam otomasi BIM, pengembangan aplikasi desktop, dan sistem web berbasis AI.
+                    </p>
+
+                    <div class="flex flex-wrap gap-8 items-center">
+                        <a href="#projects" class="text-xs tracking-widest uppercase text-brand-accent hover:text-white transition-colors flex items-center gap-2 group border-b border-transparent hover:border-brand-accent pb-1">
+                            Explore Works <i class="ph ph-arrow-down transform group-hover:translate-y-1 transition-transform"></i>
+                        </a>
+                        <a href="#about" class="text-xs tracking-widest uppercase text-brand-muted hover:text-white transition-colors flex items-center gap-2 group pb-1">
+                            More About Me <i class="ph ph-arrow-right transform group-hover:translate-x-1 transition-transform"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="order-1 lg:order-2 relative group flex justify-center lg:justify-end mb-10 lg:mb-0 z-20">
+                    
+                    <div class="absolute -right-2 -top-2 lg:-right-6 lg:-top-6 w-32 h-32 opacity-30 pointer-events-none z-0 hidden sm:block" 
+                        style="background-image: radial-gradient(#E07A5F 1.5px, transparent 1.5px); background-size: 16px 16px;">
+                    </div>
+
+                    <div class="absolute inset-0 border border-brand-accent/60 transform translate-x-4 translate-y-4 lg:translate-x-6 lg:translate-y-6 w-3/4 max-w-sm lg:w-full mx-auto lg:ml-auto z-0 transition-transform duration-500 group-hover:translate-x-2 group-hover:translate-y-2"></div>
+
+                    <div class="relative w-3/4 max-w-sm lg:w-full aspect-[3/3.5] bg-[#1a1a1a] border border-brand-line overflow-hidden z-10 shadow-2xl">
+                        
+                        <img src="{% static 'images/muka-ismail.png' %}" alt="Foto Dimas" class="w-full h-full object-cover transition-transform duration-700 scale-105 group-hover:scale-100">
+                        
+                        <div class="absolute inset-x-0 bottom-0 h-1/2 bg-gradient-to-t from-[#111111] to-transparent opacity-90 pointer-events-none"></div>
+                        
+                        <div class="absolute bottom-6 left-6 flex items-center gap-3">
+                            <span class="relative flex h-3 w-3">
+                                <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-brand-accent opacity-75"></span>
+                                <span class="relative inline-flex rounded-full h-3 w-3 bg-brand-accent"></span>
+                            </span>
+                            <span class="text-[10px] tracking-widest uppercase text-white font-mono bg-black/40 px-3 py-1.5 backdrop-blur-md border border-white/10 rounded-sm">
+                                Available for Work
+                            </span>
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+    <!-- ABOUT ME SECTION (NEW) -->
+    <section id="about" class="py-24 relative z-10 border-t border-brand-line bg-brand-bg">
+        <div class="max-w-7xl mx-auto px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24 items-center">
+                
+                <div class="flex flex-col justify-center">
+                    <h2 class="text-4xl md:text-5xl font-bold mb-4 tracking-tight">ABOUT <br> <span class="text-brand-muted">ME</span></h2>
+                    <div class="w-12 h-px bg-brand-accent mb-10"></div>
+                    
+                    <div class="max-w-md md:pl-4 md:border-l border-brand-line/50">
+                        <h3 class="text-xl md:text-2xl mb-6 text-white font-light leading-snug">
+                            Halo, saya Dimas Satria Pasha. <br>
+                            <span class="text-brand-accent italic text-lg">Digital Architect & Developer.</span>
+                        </h3>
+                        
+                        <div class="space-y-6">
+                            <p class="text-brand-muted text-sm md:text-base leading-relaxed font-light">
+                                Saya percaya bahwa membangun sistem digital membutuhkan presisi yang sama dengan merancang sebuah bangunan. Sebagai seorang <span class="text-white font-medium">Digital Architect & Developer</span>, saya menggabungkan disiplin ilmu <span class="text-white font-medium">Desain Pemodelan Bangunan (DPIB)</span> dengan <span class="text-white font-medium">logika pemrograman perangkat lunak</span>.
+                            </p>
+                            <p class="text-brand-muted text-sm md:text-base leading-relaxed font-light">
+                                Pendekatan struktural ini memungkinkan saya menciptakan solusi yang rapi, terukur, dan efisien untuk memecahkan masalah kompleks di industri AEC <span class="text-[11px] uppercase tracking-widest">(Architecture, Engineering, Construction)</span> maupun digitalisasi bisnis.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="relative flex justify-center items-center p-8 lg:p-12 border border-brand-line bg-brand-surface group">
+                    <div class="absolute top-0 left-0 w-8 h-8 border-t border-l border-brand-accent opacity-50 m-4 transition-transform group-hover:-translate-x-2 group-hover:-translate-y-2"></div>
+                    <div class="absolute bottom-0 right-0 w-8 h-8 border-b border-r border-brand-accent opacity-50 m-4 transition-transform group-hover:translate-x-2 group-hover:translate-y-2"></div>
+                    
+                    <div class="text-center relative z-10">
+                        <i class="ph-fill ph-quotes text-4xl text-brand-accent/20 mb-6 inline-block"></i>
+                        <h4 class="text-2xl md:text-3xl font-light text-white leading-snug mb-6">
+                            "Design is not just what it looks like and feels like. Design is how it <span class="font-bold text-brand-accent italic">works</span>."
+                        </h4>
+                        <div class="text-[10px] tracking-widest uppercase text-brand-muted">
+                            Engineering Logic x Architectural Precision
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <section id="services" class="py-24 relative z-10 border-t border-brand-line bg-brand-surface">
+        <div class="max-w-7xl mx-auto px-6 lg:px-8">
+            <div class="mb-16 flex flex-col md:flex-row md:items-end justify-between gap-8">
+                <div>
+                    <h2 class="text-xs tracking-mega uppercase text-brand-muted mb-4">What I Do</h2>
+                    <h3 class="text-3xl md:text-4xl font-bold text-white">SERVICES & <br><span class="font-light text-brand-muted">EXPERTISE</span></h3>
+                </div>
+                <div class="w-full md:w-1/3">
+                    <p class="text-xs text-brand-muted leading-relaxed border-l border-brand-accent pl-4">
+                        Layanan komprehensif yang menjembatani kebutuhan desain arsitektur presisi tinggi dengan pengembangan perangkat lunak berbasis web dan otomasi.
+                    </p>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-px bg-brand-line border border-brand-line">
+                
+                <div class="bg-brand-surface p-8 md:p-10 mag-card group flex flex-col justify-between h-full">
+                    <div>
+                        <div class="mb-6 flex justify-between items-center">
+                            <span class="text-xs font-mono text-brand-accent">01 //</span>
+                            <i class="ph ph-browsers text-3xl text-brand-muted group-hover:text-brand-accent transition-colors"></i>
+                        </div>
+                        <h4 class="text-xl font-bold mb-4 group-hover:text-brand-accent transition-colors">Full-Stack Web Dev</h4>
+                        <p class="text-sm text-brand-muted leading-relaxed mb-8">
+                            Pengembangan website modern dan responsif menggunakan ekosistem Python, Django, dan arsitektur UI terkini untuk berbagai kebutuhan bisnis.
+                        </p>
+                    </div>
+                    <div class="flex gap-3 text-[10px] tracking-widest uppercase font-mono text-brand-muted border-t border-brand-line/50 pt-4">
+                        <span>Django</span> • <span>Tailwind</span> • <span>JS</span>
+                    </div>
+                </div>
+
+                <div class="bg-brand-surface p-8 md:p-10 mag-card group flex flex-col justify-between h-full">
+                    <div>
+                        <div class="mb-6 flex justify-between items-center">
+                            <span class="text-xs font-mono text-brand-accent">02 //</span>
+                            <i class="ph ph-brain text-3xl text-brand-muted group-hover:text-brand-accent transition-colors"></i>
+                        </div>
+                        <h4 class="text-xl font-bold mb-4 group-hover:text-brand-accent transition-colors">AI & Business Automation</h4>
+                        <p class="text-sm text-brand-muted leading-relaxed mb-8">
+                            Mendigitalisasi operasional UMKM melalui pembuatan Bot cerdas, skrip otomatisasi laporan, dan integrasi Large Language Model (API AI) ke dalam alur kerja bisnis.
+                        </p>
+                    </div>
+                    <div class="flex gap-3 text-[10px] tracking-widest uppercase font-mono text-brand-muted border-t border-brand-line/50 pt-4">
+                        <span>Python</span> • <span class="text-white font-bold">Gemini API</span> • <span>Bots</span>
+                    </div>
+                </div>
+
+                <div class="bg-brand-surface p-8 md:p-10 mag-card group flex flex-col justify-between h-full">
+                    <div>
+                        <div class="mb-6 flex justify-between items-center">
+                            <span class="text-xs font-mono text-brand-accent">03 //</span>
+                            <i class="ph ph-cpu text-3xl text-brand-muted group-hover:text-brand-accent transition-colors"></i>
+                        </div>
+                        <h4 class="text-xl font-bold mb-4 group-hover:text-brand-accent transition-colors">AEC Custom Tools</h4>
+                        <p class="text-sm text-brand-muted leading-relaxed mb-8">
+                            Pembuatan perangkat lunak internal kustom untuk konsultan sipil, meliputi pemrosesan data survey dan otomasi desain gambar teknik.
+                        </p>
+                    </div>
+                    <div class="flex gap-3 text-[10px] tracking-widest uppercase font-mono text-brand-muted border-t border-brand-line/50 pt-4">
+                        <span>PySide6</span> • <span>ezdxf</span> • <span>Data</span>
+                    </div>
+                </div>
+
+                <div class="bg-brand-surface p-8 md:p-10 mag-card group flex flex-col justify-between h-full">
+                    <div>
+                        <div class="mb-6 flex justify-between items-center">
+                            <span class="text-xs font-mono text-brand-accent">04 //</span>
+                            <i class="ph ph-compass-tool text-3xl text-brand-muted group-hover:text-brand-accent transition-colors"></i>
+                        </div>
+                        <h4 class="text-xl font-bold mb-4 group-hover:text-brand-accent transition-colors">BIM & Drafting</h4>
+                        <p class="text-sm text-brand-muted leading-relaxed mb-8">
+                            Pemodelan gambar 2D dan 3D presisi untuk proyek konstruksi dan visualisasi desain arsitektur standar industri.
+                        </p>
+                    </div>
+                    <div class="flex gap-3 text-[10px] tracking-widest uppercase font-mono text-brand-muted border-t border-brand-line/50 pt-4">
+                        <span>Revit</span> • <span>AutoCAD</span> • <span>SketchUp</span>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <section id="skills" class="py-24 relative z-10 border-t border-brand-line bg-brand-bg overflow-hidden">
+        <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[300px] bg-brand-accent/5 rounded-full blur-[100px] pointer-events-none"></div>
+
+        <div class="max-w-7xl mx-auto px-6 lg:px-8 relative z-10">
+            <div class="text-center mb-16">
+                <h2 class="text-xs tracking-mega uppercase text-brand-muted mb-4">Tech Stack & Software</h2>
+                <h3 class="text-3xl md:text-4xl font-bold text-white">THE <span class="font-light text-brand-muted">TOOLBOX</span></h3>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                
+                <div class="bg-brand-surface border border-brand-line p-6 rounded-2xl hover:border-brand-accent/30 transition-colors">
+                    <h4 class="text-xs text-white uppercase tracking-widest mb-6 flex items-center justify-center gap-2 pb-4 border-b border-brand-line/50">
+                        <i class="ph ph-stack text-brand-accent"></i> Web Dev
+                    </h4>
+                    <div class="grid grid-cols-2 gap-3">
+                        <div class="flex flex-col items-center justify-center p-4 bg-[#141414] rounded-xl border border-white/5 hover:border-brand-accent hover:bg-[#1a1a1a] transition-all group duration-300">
+                            <img src="{% static 'images/html-logo.png' %}" alt="HTML" class="w-12 h-12 object-contain group-hover:scale-110 group-hover:-translate-y-1 transition-all duration-300 mb-3">
+                            <span class="text-[11px] font-medium text-brand-muted group-hover:text-white transition-colors">HTML5</span>
+                        </div>
+                        <div class="flex flex-col items-center justify-center p-4 bg-[#141414] rounded-xl border border-white/5 hover:border-brand-accent hover:bg-[#1a1a1a] transition-all group duration-300">
+                            <img src="{% static 'images/css-logo.jfif' %}" alt="CSS" class="w-12 h-12 object-contain group-hover:scale-110 group-hover:-translate-y-1 transition-all duration-300 mb-3">
+                            <span class="text-[11px] font-medium text-brand-muted group-hover:text-white transition-colors">CSS3</span>
+                        </div>
+                        <div class="flex flex-col items-center justify-center p-4 bg-[#141414] rounded-xl border border-white/5 hover:border-brand-accent hover:bg-[#1a1a1a] transition-all group duration-300">
+                            <img src="{% static 'images/javascript-logo.png' %}" alt="JavaScript" class="w-12 h-12 object-contain group-hover:scale-110 group-hover:-translate-y-1 transition-all duration-300 mb-3">
+                            <span class="text-[11px] font-medium text-brand-muted group-hover:text-white transition-colors">JavaScript</span>
+                        </div>
+                        <div class="flex flex-col items-center justify-center p-4 bg-[#141414] rounded-xl border border-white/5 hover:border-brand-accent hover:bg-[#1a1a1a] transition-all group duration-300">
+                            <img src="{% static 'images/django-logo.png' %}" alt="Django" class="w-12 h-12 object-contain group-hover:scale-110 group-hover:-translate-y-1 transition-all duration-300 mb-3">
+                            <span class="text-[11px] font-medium text-brand-muted group-hover:text-white transition-colors">Django</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-brand-surface border border-brand-line p-6 rounded-2xl hover:border-brand-accent/30 transition-colors">
+                    <h4 class="text-xs text-white uppercase tracking-widest mb-6 flex items-center justify-center gap-2 pb-4 border-b border-brand-line/50">
+                        <i class="ph ph-math-operations text-brand-accent"></i> Eng. Logic
+                    </h4>
+                    <div class="grid grid-cols-2 gap-3">
+                        <div class="flex flex-col items-center justify-center p-4 bg-[#141414] rounded-xl border border-white/5 hover:border-brand-accent hover:bg-[#1a1a1a] transition-all group duration-300">
+                            <img src="{% static 'images/python-logo.png' %}" alt="Python" class="w-12 h-12 object-contain group-hover:scale-110 group-hover:-translate-y-1 transition-all duration-300 mb-3">
+                            <span class="text-[11px] font-medium text-brand-muted group-hover:text-white transition-colors">Python</span>
+                        </div>
+                        <div class="flex flex-col items-center justify-center p-4 bg-[#141414] rounded-xl border border-white/5 hover:border-brand-accent hover:bg-[#1a1a1a] transition-all group duration-300">
+                            <img src="{% static 'images/gemini-logo.png' %}" alt="Gemini API" class="w-12 h-12 object-contain group-hover:scale-110 group-hover:-translate-y-1 transition-all duration-300 mb-3">
+                            <span class="text-[11px] font-medium text-brand-muted group-hover:text-white transition-colors">Gemini API</span>
+                        </div>
+                        <div class="flex flex-col items-center justify-center p-4 bg-[#141414] rounded-xl border border-white/5 hover:border-brand-accent hover:bg-[#1a1a1a] transition-all group duration-300">
+                            <img src="{% static 'images/numpy-logo.png' %}" alt="NumPy" class="w-12 h-12 object-contain group-hover:scale-110 group-hover:-translate-y-1 transition-all duration-300 mb-3">
+                            <span class="text-[11px] font-medium text-brand-muted group-hover:text-white transition-colors">NumPy</span>
+                        </div>
+                        <div class="flex flex-col items-center justify-center p-4 bg-[#141414] rounded-xl border border-white/5 hover:border-brand-accent hover:bg-[#1a1a1a] transition-all group duration-300">
+                            <img src="{% static 'images/pandas-logo.jpg' %}" alt="Pandas" class="w-12 h-12 object-contain group-hover:scale-110 group-hover:-translate-y-1 transition-all duration-300 mb-3">
+                            <span class="text-[11px] font-medium text-brand-muted group-hover:text-white transition-colors">Pandas</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-brand-surface border border-brand-line p-6 rounded-2xl hover:border-brand-accent/30 transition-colors">
+                    <h4 class="text-xs text-white uppercase tracking-widest mb-6 flex items-center justify-center gap-2 pb-4 border-b border-brand-line/50">
+                        <i class="ph ph-gear text-brand-accent"></i> AEC Auto
+                    </h4>
+                    <div class="grid grid-cols-2 gap-3">
+                        <div class="flex flex-col items-center justify-center p-4 bg-[#141414] rounded-xl border border-white/5 hover:border-brand-accent hover:bg-[#1a1a1a] transition-all group duration-300">
+                            <img src="{% static 'images/ezdxf-logo.png' %}" alt="ezdxf" class="w-12 h-12 object-contain group-hover:scale-110 group-hover:-translate-y-1 transition-all duration-300 mb-3">
+                            <span class="text-[11px] font-medium text-brand-muted group-hover:text-white transition-colors">ezdxf</span>
+                        </div>
+                        <div class="flex flex-col items-center justify-center p-4 bg-[#141414] rounded-xl border border-white/5 hover:border-brand-accent hover:bg-[#1a1a1a] transition-all group duration-300">
+                            <img src="{% static 'images/pyrevit-logo.png' %}" alt="pyRevit" class="w-12 h-12 object-contain group-hover:scale-110 group-hover:-translate-y-1 transition-all duration-300 mb-3">
+                            <span class="text-[11px] font-medium text-brand-muted group-hover:text-white transition-colors text-center">pyRevit</span>
+                        </div>
+                        <div class="col-span-2 flex flex-col items-center justify-center py-5 px-4 bg-[#141414] rounded-xl border border-white/5 hover:border-brand-accent hover:bg-[#1a1a1a] transition-all group duration-300">
+                            <img src="{% static 'images/pyside6-logo.png' %}" alt="PySide6" class="w-12 h-12 object-contain group-hover:scale-110 group-hover:-translate-y-1 transition-all duration-300 mb-3">
+                            <span class="text-xs font-medium text-brand-muted group-hover:text-white transition-colors">PySide6 (GUI)</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-brand-surface border border-brand-line p-6 rounded-2xl hover:border-brand-accent/30 transition-colors">
+                    <h4 class="text-xs text-white uppercase tracking-widest mb-6 flex items-center justify-center gap-2 pb-4 border-b border-brand-line/50">
+                        <i class="ph ph-pencil-circle text-brand-accent"></i> Design & BIM
+                    </h4>
+                    <div class="grid grid-cols-2 gap-3">
+                        <div class="flex flex-col items-center justify-center p-4 bg-[#141414] rounded-xl border border-white/5 hover:border-brand-accent hover:bg-[#1a1a1a] transition-all group duration-300">
+                            <img src="{% static 'images/revit-logo.png' %}" alt="Revit" class="w-12 h-12 object-contain group-hover:scale-110 group-hover:-translate-y-1 transition-all duration-300 mb-3">
+                            <span class="text-[11px] font-medium text-brand-muted group-hover:text-white transition-colors">Revit</span>
+                        </div>
+                        <div class="flex flex-col items-center justify-center p-4 bg-[#141414] rounded-xl border border-white/5 hover:border-brand-accent hover:bg-[#1a1a1a] transition-all group duration-300">
+                            <img src="{% static 'images/autocad-logo.png' %}" alt="AutoCAD" class="w-12 h-12 object-contain group-hover:scale-110 group-hover:-translate-y-1 transition-all duration-300 mb-3">
+                            <span class="text-[11px] font-medium text-brand-muted group-hover:text-white transition-colors">AutoCAD</span>
+                        </div>
+                        <div class="flex flex-col items-center justify-center p-4 bg-[#141414] rounded-xl border border-white/5 hover:border-brand-accent hover:bg-[#1a1a1a] transition-all group duration-300">
+                            <img src="{% static 'images/skecth up-logo.png' %}" alt="SketchUp" class="w-12 h-12 object-contain group-hover:scale-110 group-hover:-translate-y-1 transition-all duration-300 mb-3">
+                            <span class="text-[11px] font-medium text-brand-muted group-hover:text-white transition-colors">SketchUp</span>
+                        </div>
+                        <div class="flex flex-col items-center justify-center p-4 bg-[#141414] rounded-xl border border-white/5 hover:border-brand-accent hover:bg-[#1a1a1a] transition-all group duration-300">
+                            <img src="{% static 'images/enscape-logo.png' %}" alt="Enscape" class="w-12 h-12 object-contain group-hover:scale-110 group-hover:-translate-y-1 transition-all duration-300 mb-3">
+                            <span class="text-[11px] font-medium text-brand-muted group-hover:text-white transition-colors">Enscape</span>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <section id="projects" class="py-24 relative z-10 border-t border-brand-line bg-brand-bg">
+        <div class="max-w-7xl mx-auto px-6 lg:px-8">
+            
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold mb-8">SELECTED <br><span class="font-light text-brand-muted">WORKS</span></h2>
+                
+                <div class="flex flex-wrap justify-center gap-6" id="filter-buttons">
+                    <button onclick="filterProjects('all')" class="filter-btn active text-xs tracking-widest uppercase text-white border-b border-brand-accent pb-1 transition-all">All</button>
+                    <button onclick="filterProjects('aec')" class="filter-btn text-xs tracking-widest uppercase text-brand-muted hover:text-white border-b border-transparent hover:border-brand-line pb-1 transition-all">AEC Tech</button>
+                    <button onclick="filterProjects('dev')" class="filter-btn text-xs tracking-widest uppercase text-brand-muted hover:text-white border-b border-transparent hover:border-brand-line pb-1 transition-all">Software</button>
+                    <button onclick="filterProjects('bim')" class="filter-btn text-xs tracking-widest uppercase text-brand-muted hover:text-white border-b border-transparent hover:border-brand-line pb-1 transition-all">Architecture</button>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-12" id="projects-grid">
+                
+                
+                <a href="/projects/civilix-web.html" class="project-item group block bg-brand-surface border border-brand-line p-6 hover:border-brand-accent/50 transition-all duration-500 hover:-translate-y-2" data-category="aec">
+                    <div class="relative overflow-hidden aspect-[16/10] bg-[#111] mb-6 border border-brand-line/50 rounded-sm">
+                        <img src="{% static 'images/civilix-thumbnail.png' %}" alt="Civilix Preview" class="w-full h-full object-cover opacity-80 group-hover:opacity-100 group-hover:scale-105 transition-all duration-700">
+                        <div class="absolute top-4 left-4 bg-black/60 backdrop-blur-md border border-white/10 px-3 py-1.5 text-[9px] uppercase tracking-widest text-white">View Project</div>
+                    </div>
+                    <div class="flex justify-between items-end gap-4">
+                        <div>
+                            <div class="flex items-center gap-3 mb-3">
+                                <span class="text-[10px] font-mono text-brand-accent">01 //</span>
+                                <span class="text-[10px] tracking-mega uppercase text-brand-muted">AEC Tech</span>
+                            </div>
+                            <h3 class="text-xl lg:text-2xl font-bold text-white mb-2 group-hover:text-brand-accent transition-colors">Civilix Cloud Platform</h3>
+                            <p class="text-sm text-brand-muted line-clamp-2 w-11/12">Sistem manajemen data AEC cerdas yang mendigitalisasi alur kerja survey. Memanfaatkan algoritma AI untuk deteksi kesalahan.</p>
+                        </div>
+                        <div class="w-10 h-10 rounded-full border border-brand-line flex items-center justify-center group-hover:bg-brand-accent group-hover:border-brand-accent transition-all duration-300 shrink-0">
+                            <i class="ph ph-arrow-up-right text-brand-muted group-hover:text-white transition-colors"></i>
+                        </div>
+                    </div>
+                </a>
+
+                <div class="md:translate-y-16 project-item" data-category="bim">
+                    <a href="/projects/mediterranean.html" class="group block bg-brand-surface border border-brand-line p-6 hover:border-brand-accent/50 transition-all duration-500 hover:-translate-y-2">
+                        <div class="relative overflow-hidden aspect-[16/10] bg-[#111] mb-6 border border-brand-line/50 rounded-sm">
+                            <img src="{% static 'images/mediterranean-poto.png' %}" alt="Mediterranean Preview" class="w-full h-full object-cover opacity-80 group-hover:opacity-100 group-hover:scale-105 transition-all duration-700">
+                            <div class="absolute top-4 left-4 bg-black/60 backdrop-blur-md border border-white/10 px-3 py-1.5 text-[9px] uppercase tracking-widest text-white">View Project</div>
+                        </div>
+                        <div class="flex justify-between items-end gap-4">
+                            <div>
+                                <div class="flex items-center gap-3 mb-3">
+                                    <span class="text-[10px] font-mono text-brand-accent">02 //</span>
+                                    <span class="text-[10px] tracking-mega uppercase text-brand-muted">Architecture</span>
+                                </div>
+                                <h3 class="text-xl lg:text-2xl font-bold text-white mb-2 group-hover:text-brand-accent transition-colors">The Modern Mediterranean</h3>
+                                <p class="text-sm text-brand-muted line-clamp-2 w-11/12">Visualisasi 3D dan rendering sinematik menggunakan SketchUp untuk desain hunian arsitektur mewah.</p>
+                            </div>
+                            <div class="w-10 h-10 rounded-full border border-brand-line flex items-center justify-center group-hover:bg-brand-accent group-hover:border-brand-accent transition-all duration-300 shrink-0">
+                                <i class="ph ph-arrow-up-right text-brand-muted group-hover:text-white transition-colors"></i>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+
+                <a href="/projects/clipix.html" class="project-item group block bg-brand-surface border border-brand-line p-6 hover:border-brand-accent/50 transition-all duration-500 hover:-translate-y-2" data-category="dev">
+                    <div class="relative overflow-hidden aspect-[16/10] bg-[#111] mb-6 border border-brand-line/50 rounded-sm">
+                        <img src="{% static 'images/clipix-thumbnai-app.png' %}" alt="Clipix Preview" class="w-full h-full object-cover opacity-80 group-hover:opacity-100 group-hover:scale-105 transition-all duration-700">
+                        <div class="absolute top-4 left-4 bg-black/60 backdrop-blur-md border border-white/10 px-3 py-1.5 text-[9px] uppercase tracking-widest text-white">View Project</div>
+                    </div>
+                    <div class="flex justify-between items-end gap-4">
+                        <div>
+                            <div class="flex items-center gap-3 mb-3">
+                                <span class="text-[10px] font-mono text-brand-accent">03 //</span>
+                                <span class="text-[10px] tracking-mega uppercase text-brand-muted">Software</span>
+                            </div>
+                            <h3 class="text-xl lg:text-2xl font-bold text-white mb-2 group-hover:text-brand-accent transition-colors">Clipix Video Engine</h3>
+                            <p class="text-sm text-brand-muted line-clamp-2 w-11/12">Sistem perangkat lunak pintar untuk memotong klip video secara terotomatisasi, dengan integrasi AI kurasi momen.</p>
+                        </div>
+                        <div class="w-10 h-10 rounded-full border border-brand-line flex items-center justify-center group-hover:bg-brand-accent group-hover:border-brand-accent transition-all duration-300 shrink-0">
+                            <i class="ph ph-arrow-up-right text-brand-muted group-hover:text-white transition-colors"></i>
+                        </div>
+                    </div>
+                </a>
+
+                <div class="md:translate-y-16 project-item" data-category="aec">
+                    <a href="/projects/land-measurement.html" class="group block bg-brand-surface border border-brand-line p-6 hover:border-brand-accent/50 transition-all duration-500 hover:-translate-y-2">
+                        <div class="relative overflow-hidden aspect-[16/10] bg-[#111] mb-6 border border-brand-line/50 rounded-sm">
+                            <img src="{% static 'images/Civilix-dekstop.png' %}" alt="Land Measurement Preview" class="w-full h-full object-cover opacity-80 group-hover:opacity-100 group-hover:scale-105 transition-all duration-700">
+                            <div class="absolute top-4 left-4 bg-black/60 backdrop-blur-md border border-white/10 px-3 py-1.5 text-[9px] uppercase tracking-widest text-white">View Project</div>
+                        </div>
+                        <div class="flex justify-between items-end gap-4">
+                            <div>
+                                <div class="flex items-center gap-3 mb-3">
+                                    <span class="text-[10px] font-mono text-brand-accent">04 //</span>
+                                    <span class="text-[10px] tracking-mega uppercase text-brand-muted">AEC Tech</span>
+                                </div>
+                                <h3 class="text-xl lg:text-2xl font-bold text-white mb-2 group-hover:text-brand-accent transition-colors">Land Measurement Tool</h3>
+                                <p class="text-sm text-brand-muted line-clamp-2 w-11/12">Desktop client dengan logika engineering murni (Python) untuk plotting elevasi lapangan dan export laporan.</p>
+                            </div>
+                            <div class="w-10 h-10 rounded-full border border-brand-line flex items-center justify-center group-hover:bg-brand-accent group-hover:border-brand-accent transition-all duration-300 shrink-0">
+                                <i class="ph ph-arrow-up-right text-brand-muted group-hover:text-white transition-colors"></i>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+
+                <a href="/projects/2d-drafting.html" class="project-item group block bg-brand-surface border border-brand-line p-6 hover:border-brand-accent/50 transition-all duration-500 hover:-translate-y-2" data-category="bim">
+                    <div class="relative overflow-hidden aspect-[16/10] bg-[#111] mb-6 border border-brand-line/50 rounded-sm">
+                        <img src="{% static 'images/drafting-thumbnail.png' %}" alt="Drafting Preview" class="w-full h-full object-cover opacity-80 group-hover:opacity-100 group-hover:scale-105 transition-all duration-700">
+                        <div class="absolute top-4 left-4 bg-black/60 backdrop-blur-md border border-white/10 px-3 py-1.5 text-[9px] uppercase tracking-widest text-white">View Project</div>
+                    </div>
+                    <div class="flex justify-between items-end gap-4">
+                        <div>
+                            <div class="flex items-center gap-3 mb-3">
+                                <span class="text-[10px] font-mono text-brand-accent">05 //</span>
+                                <span class="text-[10px] tracking-mega uppercase text-brand-muted">Architecture</span>
+                            </div>
+                            <h3 class="text-xl lg:text-2xl font-bold text-white mb-2 group-hover:text-brand-accent transition-colors">Comprehensive Drafting</h3>
+                            <p class="text-sm text-brand-muted line-clamp-2 w-11/12">Produksi gambar kerja arsitektur presisi tinggi (AutoCAD & Manual Drafting) dari denah hingga detail atap.</p>
+                        </div>
+                        <div class="w-10 h-10 rounded-full border border-brand-line flex items-center justify-center group-hover:bg-brand-accent group-hover:border-brand-accent transition-all duration-300 shrink-0">
+                            <i class="ph ph-arrow-up-right text-brand-muted group-hover:text-white transition-colors"></i>
+                        </div>
+                    </div>
+                </a>
+
+                <div class="md:translate-y-16 project-item" data-category="bim">
+                    <a href="/projects/residential-bim.html" class="group block bg-brand-surface border border-brand-line p-6 hover:border-brand-accent/50 transition-all duration-500 hover:-translate-y-2">
+                        <div class="relative overflow-hidden aspect-[16/10] bg-[#111] mb-6 border border-brand-line/50 rounded-sm">
+                            <img src="{% static 'images/revit-thumbnail.png' %}" alt="Revit Preview" class="w-full h-full object-cover opacity-80 group-hover:opacity-100 group-hover:scale-105 transition-all duration-700">
+                            <div class="absolute top-4 left-4 bg-black/60 backdrop-blur-md border border-white/10 px-3 py-1.5 text-[9px] uppercase tracking-widest text-white">View Project</div>
+                        </div>
+                        <div class="flex justify-between items-end gap-4">
+                            <div>
+                                <div class="flex items-center gap-3 mb-3">
+                                    <span class="text-[10px] font-mono text-brand-accent">06 //</span>
+                                    <span class="text-[10px] tracking-mega uppercase text-brand-muted">Architecture</span>
+                                </div>
+                                <h3 class="text-xl lg:text-2xl font-bold text-white mb-2 group-hover:text-brand-accent transition-colors">Residential BIM Model</h3>
+                                <p class="text-sm text-brand-muted line-clamp-2 w-11/12">Penyusunan model informasi bangunan (BIM) fase desain arsitektural untuk fasad dan tata ruang.</p>
+                            </div>
+                            <div class="w-10 h-10 rounded-full border border-brand-line flex items-center justify-center group-hover:bg-brand-accent group-hover:border-brand-accent transition-all duration-300 shrink-0">
+                                <i class="ph ph-arrow-up-right text-brand-muted group-hover:text-white transition-colors"></i>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+
+                <a href="/projects/clipix-web.html" class="project-item group block bg-brand-surface border border-brand-line p-6 hover:border-brand-accent/50 transition-all duration-500 hover:-translate-y-2" data-category="dev">
+                    <div class="relative overflow-hidden aspect-[16/10] bg-[#111] mb-6 border border-brand-line/50 rounded-sm">
+                        <img src="{% static 'images/clipix-humbnail.png' %}" alt="Clipix Web Preview" class="w-full h-full object-cover opacity-80 group-hover:opacity-100 group-hover:scale-105 transition-all duration-700">
+                        <div class="absolute top-4 left-4 bg-black/60 backdrop-blur-md border border-white/10 px-3 py-1.5 text-[9px] uppercase tracking-widest text-white">View Project</div>
+                    </div>
+                    <div class="flex justify-between items-end gap-4">
+                        <div>
+                            <div class="flex items-center gap-3 mb-3">
+                                <span class="text-[10px] font-mono text-brand-accent">07 //</span>
+                                <span class="text-[10px] tracking-mega uppercase text-brand-muted">Web Development</span>
+                            </div>
+                            <h3 class="text-xl lg:text-2xl font-bold text-white mb-2 group-hover:text-brand-accent transition-colors">Clipix Web Portal & API</h3>
+                            <p class="text-sm text-brand-muted line-clamp-2 w-11/12">Platform komersial dan sistem API untuk memasarkan dan mendistribusikan lisensi aplikasi desktop Clipix.</p>
+                        </div>
+                        <div class="w-10 h-10 rounded-full border border-brand-line flex items-center justify-center group-hover:bg-brand-accent group-hover:border-brand-accent transition-all duration-300 shrink-0">
+                            <i class="ph ph-arrow-up-right text-brand-muted group-hover:text-white transition-colors"></i>
+                        </div>
+                    </div>
+                </a>
+
+            </div>
+
+            
+        </div>
+    </section>
+
+    <section id="contact" class="py-32 relative z-10 border-y border-brand-line bg-brand-surface text-center">
+        <div class="max-w-2xl mx-auto px-6">
+            <h2 class="text-xs tracking-mega uppercase text-brand-muted mb-8 flex justify-center items-center gap-2">
+                <span class="w-8 h-px bg-brand-line"></span> Get In Touch <span class="w-8 h-px bg-brand-line"></span>
+            </h2>
+            <h3 class="text-4xl md:text-5xl font-bold text-white mb-8">LET'S BUILD <br><span class="font-light text-brand-muted italic">SOMETHING</span></h3>
+            
+            <p class="text-sm text-brand-muted mb-12">
+                Tertarik untuk mendiskusikan sistem web, otomasi bisnis, atau kebutuhan BIM Anda? 
+                Mari ngobrol dan temukan solusi teknis terbaik.
+            </p>
+            
+            <div class="flex flex-col sm:flex-row items-center justify-center gap-8 md:gap-12">
+                <a href="mailto:satriadimas269@gmail.com" class="inline-flex items-center gap-3 border-b border-white/30 hover:border-brand-accent text-sm md:text-base tracking-widest uppercase pb-2 transition-all hover:text-brand-accent group">
+                    <i class="ph ph-envelope-simple text-xl group-hover:-translate-y-1 transition-transform"></i>
+                    satriadimas269@gmail.com
+                </a>
+                
+                <a href="https://wa.me/62895343842200" target="_blank" class="inline-flex items-center gap-3 border-b border-white/30 hover:border-brand-accent text-sm md:text-base tracking-widest uppercase pb-2 transition-all hover:text-brand-accent group">
+                    <i class="ph ph-whatsapp-logo text-xl group-hover:-translate-y-1 transition-transform"></i>
+                    WhatsApp Me
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-brand-bg py-12 relative z-10 border-t border-brand-line/50">
+        <div class="max-w-7xl mx-auto px-6 lg:px-8 flex flex-col md:flex-row justify-between items-center gap-8">
+            
+            <p class="text-brand-muted text-[10px] tracking-widest uppercase">
+                © 2026 DIMAS SATRIA PASHA. ALL RIGHTS RESERVED.
+            </p>
+            
+            <div class="flex items-center gap-6">
+                <a href="https://linkedin.com/in/dimas-satria-pasha-047209406" target="_blank" class="text-brand-muted hover:text-brand-accent transform hover:-translate-y-1 transition-all" aria-label="LinkedIn">
+                    <i class="ph ph-linkedin-logo text-2xl"></i>
+                </a>
+                
+                <a href="https://github.com/Dimas-SP08" target="_blank" class="text-brand-muted hover:text-white transform hover:-translate-y-1 transition-all" aria-label="GitHub">
+                    <i class="ph ph-github-logo text-2xl"></i>
+                </a>
+                
+                <a href="https://instagram.com/diespy_art" target="_blank" class="text-brand-muted hover:text-brand-accent transform hover:-translate-y-1 transition-all" aria-label="Instagram">
+                    <i class="ph ph-instagram-logo text-2xl"></i>
+                </a>
+                
+                <a href="https://tiktok.com/@diespy_x_clipix" target="_blank" class="text-brand-muted hover:text-white transform hover:-translate-y-1 transition-all" aria-label="TikTok">
+                    <i class="ph ph-tiktok-logo text-2xl"></i>
+                </a>
+            </div>
+
+        </div>
+    </footer>
+
+    <!-- Script Filter Project -->
+    <script>
+        function filterProjects(category) {
+            const projects = document.querySelectorAll('.project-item');
+            const buttons = document.querySelectorAll('.filter-btn');
+
+            // Minimalist Button Styling Update
+            buttons.forEach(btn => {
+                if(btn.innerText.toLowerCase().includes(category) || (category === 'all' && btn.innerText === 'ALL')) {
+                    btn.classList.replace('text-brand-muted', 'text-white');
+                    btn.classList.replace('border-transparent', 'border-brand-accent');
+                } else {
+                    btn.classList.replace('text-white', 'text-brand-muted');
+                    btn.classList.replace('border-brand-accent', 'border-transparent');
+                }
+            });
+
+            // Filter logic
+            projects.forEach(project => {
+                if (category === 'all' || project.dataset.category === category) {
+                    project.style.display = 'block';
+                    setTimeout(() => { project.style.opacity = '1'; }, 50);
+                } else {
+                    project.style.display = 'none';
+                }
+            });
+        }
+    </script>
+    <script>
+        const btn = document.getElementById('mobile-menu-btn');
+        const menu = document.getElementById('mobile-menu');
+        const menuIcon = document.getElementById('menu-icon');
+        const backdrop = document.getElementById('mobile-backdrop');
+        const mobileLinks = document.querySelectorAll('.mobile-link');
+
+        function toggleMenu() {
+            const isClosed = menu.classList.contains('translate-x-full');
+            if (isClosed) {
+                // Buka Drawer
+                menu.classList.remove('translate-x-full');
+                backdrop.classList.remove('hidden');
+                // Kasih delay super kecil biar animasi opacity-nya jalan
+                setTimeout(() => backdrop.classList.remove('opacity-0'), 10);
+                menuIcon.classList.remove('ph-list');
+                menuIcon.classList.add('ph-x');
+                document.body.style.overflow = 'hidden'; // Kunci layar belakang
+            } else {
+                // Tutup Drawer
+                menu.classList.add('translate-x-full');
+                backdrop.classList.add('opacity-0');
+                setTimeout(() => backdrop.classList.add('hidden'), 300); // Tunggu drawer kelar nutup
+                menuIcon.classList.remove('ph-x');
+                menuIcon.classList.add('ph-list');
+                document.body.style.overflow = 'auto'; // Buka layar belakang
+            }
+        }
+
+        // Kalau tombol hamburger diklik
+        btn.addEventListener('click', toggleMenu);
+        
+        // Kalau area luar menu (backdrop) diklik, menu ikut nutup
+        backdrop.addEventListener('click', toggleMenu);
+
+        // Kalau salah satu link diklik, menu nutup
+        mobileLinks.forEach(link => {
+            link.addEventListener('click', toggleMenu);
+        });
+    </script>
+</body>
+</html>
