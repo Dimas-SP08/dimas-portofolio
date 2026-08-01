@@ -67,10 +67,9 @@
     
     <!-- PRELOADER -->
     <div id="preloader" class="fixed inset-0 z-[9999] bg-[#111111] flex flex-col items-center justify-center transition-all duration-700 ease-in-out">
-        <div class="flex items-baseline overflow-hidden uppercase">
-            <span class="text-2xl md:text-4xl font-light text-brand-muted tracking-widest translate-y-full opacity-0 animate-fade-in-up">WELCOME TO</span>
-            <span class="text-2xl md:text-4xl font-bold text-white ml-2 md:ml-4 tracking-widest translate-y-full opacity-0 animate-fade-in-up" style="animation-delay: 150ms;">MY PORTFOLIO</span>
-            <span class="text-2xl md:text-4xl text-brand-accent font-bold translate-y-full opacity-0 animate-fade-in-up" style="animation-delay: 300ms;">.</span>
+        <div class="flex flex-col md:flex-row items-center overflow-hidden uppercase text-center md:text-left">
+            <span class="text-xl md:text-4xl font-light text-brand-muted tracking-widest translate-y-full opacity-0 animate-fade-in-up whitespace-nowrap">WELCOME TO</span>
+            <span class="text-xl md:text-4xl font-bold text-white mt-1 md:mt-0 md:ml-4 tracking-widest translate-y-full opacity-0 animate-fade-in-up whitespace-nowrap" style="animation-delay: 150ms;">MY PORTFOLIO<span class="text-brand-accent">.</span></span>
         </div>
         <div class="mt-8 w-48 h-[2px] bg-white/10 overflow-hidden rounded-full">
             <div class="w-full h-full bg-brand-accent -translate-x-full animate-slide-right" style="animation-delay: 400ms;"></div>
@@ -86,7 +85,7 @@
         <div class="editorial-line right-6 lg:right-8"></div>
     </div>
 
-    <nav class="fixed w-full z-[60] bg-[#111111]/90 backdrop-blur-md border-b border-brand-line transition-all duration-300">
+    <nav class="fixed w-full z-[60] bg-[#111111]/90 md:backdrop-blur-md border-b border-brand-line transition-all duration-300">
         <div class="max-w-7xl mx-auto px-6 lg:px-8 relative z-[60]">
             <div class="flex items-center justify-between h-20">
                 
@@ -135,7 +134,7 @@
             </div>
         </div>
 
-        <div id="mobile-backdrop" class="fixed inset-0 bg-black/60 backdrop-blur-sm z-[40] hidden opacity-0 transition-opacity duration-300"></div>
+        <div id="mobile-backdrop" class="fixed inset-0 bg-black/60 md:backdrop-blur-sm z-[40] hidden opacity-0 transition-opacity duration-300"></div>
 
         <div id="mobile-menu" class="fixed top-0 right-0 h-screen w-64 bg-[#141414] border-l border-brand-line z-[50] transform translate-x-full transition-transform duration-300 ease-in-out shadow-2xl flex flex-col">
             
@@ -163,7 +162,7 @@
     <!-- HERO SECTION -->
     <section id="home" class="relative pt-32 pb-20 lg:pt-0 lg:pb-0 min-h-screen flex items-center justify-center overflow-hidden">
         
-        <div class="absolute top-1/4 -left-40 w-[500px] h-[500px] bg-brand-accent/10 rounded-full mix-blend-screen filter blur-[120px] opacity-60 z-0 pointer-events-none"></div>
+        <div class="absolute top-1/4 -left-40 w-[500px] h-[500px] bg-brand-accent/10 rounded-full mix-blend-screen filter blur-[120px] hidden md:block opacity-60 z-0 pointer-events-none"></div>
 
         <div class="relative z-10 max-w-7xl mx-auto px-6 lg:px-8 w-full">
             <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-24 items-center">
@@ -211,7 +210,7 @@
                                 <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-brand-accent opacity-75"></span>
                                 <span class="relative inline-flex rounded-full h-3 w-3 bg-brand-accent"></span>
                             </span>
-                            <span class="text-[10px] tracking-widest uppercase text-white font-mono bg-black/40 px-3 py-1.5 backdrop-blur-md border border-white/10 rounded-sm">
+                            <span class="text-[10px] tracking-widest uppercase text-white font-mono bg-black/40 px-3 py-1.5 md:backdrop-blur-md border border-white/10 rounded-sm">
                                 {% trans "Siap Bekerja Sama" %}
                             </span>
                         </div>
@@ -290,7 +289,7 @@
                     </video>
                     <div class="absolute inset-0 bg-gradient-to-t from-[#111111] via-[#111111]/50 to-transparent opacity-90 group-hover:opacity-80 transition-opacity"></div>
                     
-                    <div class="absolute top-6 left-6 bg-black/60 backdrop-blur-md border border-white/10 px-4 py-2 text-[10px] uppercase tracking-widest text-white rounded-full z-10 flex items-center gap-2">
+                    <div class="absolute top-6 left-6 bg-black/60 md:backdrop-blur-md border border-white/10 px-4 py-2 text-[10px] uppercase tracking-widest text-white rounded-full z-10 flex items-center gap-2">
                         <span class="relative flex h-2 w-2">
                             <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-brand-accent opacity-75"></span>
                             <span class="relative inline-flex rounded-full h-2 w-2 bg-brand-accent"></span>
@@ -307,7 +306,7 @@
                             <h3 class="text-2xl lg:text-4xl font-bold text-white mb-3 group-hover:text-brand-accent transition-colors drop-shadow-lg">Civilix Survey</h3>
                             <p class="text-sm text-brand-muted/90 line-clamp-2 pr-4">{% trans "Sistem kalkulasi otomatis untuk potongan memanjang, melintang, dan cut/fill (beserta hasil gambar CAD). Terintegrasi dengan cloud dan AI analyzer untuk meminimalisir kesalahan di lapangan." %}</p>
                         </div>
-                        <div class="w-12 h-12 rounded-full border border-white/20 bg-white/5 backdrop-blur-md flex items-center justify-center group-hover:bg-brand-accent group-hover:border-brand-accent transition-all duration-300 shrink-0">
+                        <div class="w-12 h-12 rounded-full border border-white/20 bg-white/5 md:backdrop-blur-md flex items-center justify-center group-hover:bg-brand-accent group-hover:border-brand-accent transition-all duration-300 shrink-0">
                             <i class="ph ph-arrow-up-right text-white text-lg"></i>
                         </div>
                     </div>
@@ -320,7 +319,7 @@
                     </video>
                     <div class="absolute inset-0 bg-gradient-to-t from-[#111111] via-[#111111]/60 to-transparent opacity-90 group-hover:opacity-70 transition-opacity"></div>
                     
-                    <div class="absolute top-6 left-6 bg-black/60 backdrop-blur-md border border-white/10 px-4 py-2 text-[10px] uppercase tracking-widest text-white rounded-full z-10 flex items-center gap-2">
+                    <div class="absolute top-6 left-6 bg-black/60 md:backdrop-blur-md border border-white/10 px-4 py-2 text-[10px] uppercase tracking-widest text-white rounded-full z-10 flex items-center gap-2">
                         <i class="ph-fill ph-sparkle text-brand-accent"></i> AI Copilot
                     </div>
                     
@@ -345,7 +344,7 @@
                     </video>
                     <div class="absolute inset-0 bg-gradient-to-t from-[#111111] via-[#111111]/60 to-transparent opacity-90 group-hover:opacity-70 transition-opacity"></div>
                     
-                    <div class="absolute top-6 left-6 bg-black/60 backdrop-blur-md border border-white/10 px-4 py-2 text-[10px] uppercase tracking-widest text-white rounded-full z-10">
+                    <div class="absolute top-6 left-6 bg-black/60 md:backdrop-blur-md border border-white/10 px-4 py-2 text-[10px] uppercase tracking-widest text-white rounded-full z-10">
                         AEC Tech
                     </div>
                     
@@ -367,7 +366,7 @@
                     <img src="{% static 'images/drafting-thumbnail.webp' %}" alt="Drafting Preview" class="absolute inset-0 w-full h-full object-cover opacity-50 group-hover:opacity-60 transition-all duration-700">
                     <div class="absolute inset-0 bg-gradient-to-t from-[#111111] via-[#111111]/60 to-transparent opacity-90 group-hover:opacity-80 transition-opacity"></div>
                     
-                    <div class="absolute top-6 left-6 bg-black/60 backdrop-blur-md border border-white/10 px-4 py-2 text-[10px] uppercase tracking-widest text-white rounded-full z-10">
+                    <div class="absolute top-6 left-6 bg-black/60 md:backdrop-blur-md border border-white/10 px-4 py-2 text-[10px] uppercase tracking-widest text-white rounded-full z-10">
                         Arsitektur
                     </div>
                     
@@ -385,7 +384,7 @@
                     <img src="{% static 'images/revit-thumbnail.webp' %}" alt="Revit School Preview" class="absolute inset-0 w-full h-full object-cover opacity-50 group-hover:opacity-60 transition-all duration-700">
                     <div class="absolute inset-0 bg-gradient-to-t from-[#111111] via-[#111111]/60 to-transparent opacity-90 group-hover:opacity-80 transition-opacity"></div>
                     
-                    <div class="absolute top-6 left-6 bg-black/60 backdrop-blur-md border border-white/10 px-4 py-2 text-[10px] uppercase tracking-widest text-white rounded-full z-10">
+                    <div class="absolute top-6 left-6 bg-black/60 md:backdrop-blur-md border border-white/10 px-4 py-2 text-[10px] uppercase tracking-widest text-white rounded-full z-10">
                         Arsitektur
                     </div>
                     
@@ -406,12 +405,12 @@
                     
                     <!-- Centered Play Button -->
                     <div class="absolute inset-0 flex items-center justify-center z-20 pointer-events-none">
-                        <div class="w-16 h-16 lg:w-20 lg:h-20 bg-brand-accent/90 backdrop-blur-md rounded-full flex items-center justify-center text-white shadow-[0_0_30px_rgba(224,122,95,0.5)] group-hover:scale-110 group-hover:bg-brand-accent transition-all duration-500 pl-1">
+                        <div class="w-16 h-16 lg:w-20 lg:h-20 bg-brand-accent/90 md:backdrop-blur-md rounded-full flex items-center justify-center text-white shadow-[0_0_30px_rgba(224,122,95,0.5)] group-hover:scale-110 group-hover:bg-brand-accent transition-all duration-500 pl-1">
                             <i class="ph-fill ph-play text-2xl lg:text-3xl"></i>
                         </div>
                     </div>
 
-                    <div class="absolute top-6 left-6 bg-black/60 backdrop-blur-md border border-white/10 px-4 py-2 text-[10px] uppercase tracking-widest text-white rounded-full z-10 flex items-center gap-2">
+                    <div class="absolute top-6 left-6 bg-black/60 md:backdrop-blur-md border border-white/10 px-4 py-2 text-[10px] uppercase tracking-widest text-white rounded-full z-10 flex items-center gap-2">
                         <i class="ph-fill ph-youtube-logo text-red-500 text-lg"></i> Tonton Video
                     </div>
                     
@@ -427,7 +426,7 @@
                     </div>
 
                     <!-- Instagram Action Button -->
-                    <a href="https://www.instagram.com/reel/DYJ63nJzjv1/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==" target="_blank" onclick="event.stopPropagation()" class="absolute bottom-6 right-6 lg:bottom-8 lg:right-8 bg-black/60 hover:bg-brand-accent text-white px-5 py-2.5 rounded-full text-xs font-semibold tracking-wider flex items-center gap-2 backdrop-blur-md transition-all duration-300 z-30 border border-white/10 hover:border-brand-accent">
+                    <a href="https://www.instagram.com/reel/DYJ63nJzjv1/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==" target="_blank" onclick="event.stopPropagation()" class="absolute bottom-6 right-6 lg:bottom-8 lg:right-8 bg-black/60 hover:bg-brand-accent text-white px-5 py-2.5 rounded-full text-xs font-semibold tracking-wider flex items-center gap-2 md:backdrop-blur-md transition-all duration-300 z-30 border border-white/10 hover:border-brand-accent">
                         <i class="ph-fill ph-instagram-logo text-lg"></i> Lihat Reels
                     </a>
                 </div>
@@ -437,7 +436,7 @@
                     <img src="{% static 'images/clipix-thumbnai-app.webp' %}" alt="Clipix Preview" class="absolute inset-0 w-full h-full object-cover opacity-50 group-hover:opacity-60 transition-all duration-700">
                     <div class="absolute inset-0 bg-gradient-to-t from-[#111111] via-[#111111]/70 to-transparent opacity-90 group-hover:opacity-80 transition-opacity"></div>
                     
-                    <div class="absolute top-6 left-6 bg-black/60 backdrop-blur-md border border-white/10 px-4 py-2 text-[10px] uppercase tracking-widest text-white rounded-full z-10">
+                    <div class="absolute top-6 left-6 bg-black/60 md:backdrop-blur-md border border-white/10 px-4 py-2 text-[10px] uppercase tracking-widest text-white rounded-full z-10">
                         lainnya
                     </div>
                     
@@ -458,8 +457,8 @@
 
     <!-- SERTIFIKAT AI & TECH (TRUST BADGES) -->
     <section id="certificates" class="py-24 relative z-10 border-t border-brand-line bg-brand-bg">
-        <div class="max-w-7xl mx-auto px-6 lg:px-8">
-            <div class="mb-16 flex flex-col md:flex-row md:items-end justify-between gap-8">
+        <div class="max-w-7xl mx-auto">
+            <div class="px-6 lg:px-8 mb-12 flex flex-col md:flex-row md:items-end justify-between gap-8">
                 <div>
                     <h2 class="text-xs tracking-mega uppercase text-brand-muted mb-4 flex items-center gap-2">
                         <span class="w-8 h-px bg-brand-line"></span> {% trans "Sertifikat" %}
@@ -467,20 +466,24 @@
                     <h3 class="text-4xl md:text-5xl font-bold text-white uppercase" data-aos="fade-up">{% trans "Sertifikasi" %} <span class="font-light text-brand-muted italic">AI & Tech</span></h3>
                 </div>
                 <div class="max-w-md">
-                    <p class="text-brand-muted text-sm leading-relaxed">
+                    <p class="text-brand-muted text-sm leading-relaxed mb-4 md:mb-0">
                         {% trans "Validasi keahlian teknis secara global melalui DataCamp. Sertifikasi ini membuktikan bahwa ekosistem Civilix dibangun di atas fondasi engineering dan algoritma AI yang terstandarisasi." %}
                     </p>
+                    <!-- Scroll Hint for Mobile -->
+                    <div class="flex items-center gap-2 text-brand-accent text-xs font-bold tracking-widest uppercase md:hidden animate-pulse">
+                        <span>Geser</span> <i class="ph-bold ph-arrow-right text-base"></i>
+                    </div>
                 </div>
             </div>
 
             <!-- Scrollable Grid for All Certificates -->
-            <div class="grid grid-rows-2 grid-flow-col gap-6 overflow-x-auto scroll-smooth overscroll-x-contain pb-8 custom-scrollbar pt-4" data-aos="fade-up" data-aos-delay="150">
+            <div class="grid grid-rows-2 grid-flow-col gap-6 overflow-x-auto scroll-smooth overscroll-x-contain pb-8 custom-scrollbar pt-4 px-6 lg:px-8" data-aos="fade-up" data-aos-delay="150">
 
                 <!-- Main AIEDA -->
                 <div class="w-80 md:w-[26rem] h-56 md:h-64 shrink-0 group relative overflow-hidden bg-brand-surface border border-brand-accent hover:border-white transition-all duration-500 rounded-sm">
                     <img onclick="openCertModal(this.src)" src="{% static 'images/certificate/AIEDA0010381230637.webp' %}" alt="Associate AI Engineer Certificate" class="cursor-zoom-in cursor-pointer w-full h-full object-cover opacity-90 group-hover:opacity-100 group-hover:scale-105 transition-all duration-700">
                     <div class="absolute inset-0 bg-gradient-to-t from-[#111111] via-transparent to-transparent opacity-80"></div>
-                    <button onclick="openCertModal(this.closest('.group').querySelector('img').src)" class="absolute top-4 right-4 w-8 h-8 flex items-center justify-center bg-black/50 border border-white/10 rounded-full text-white/70 hover:text-white hover:bg-brand-accent/80 hover:scale-110 hover:border-brand-accent transition-all backdrop-blur-md z-10" title="Perbesar">
+                    <button onclick="openCertModal(this.closest('.group').querySelector('img').src)" class="absolute top-4 right-4 w-8 h-8 flex items-center justify-center bg-black/50 border border-white/10 rounded-full text-white/70 hover:text-white hover:bg-brand-accent/80 hover:scale-110 hover:border-brand-accent transition-all md:backdrop-blur-md z-10" title="Perbesar">
                         <i class="ph-bold ph-arrows-out text-sm"></i>
                     </button>
                     <div class="absolute bottom-0 w-full p-5 flex justify-between items-end">
@@ -488,7 +491,7 @@
                             <span class="text-[9px] font-mono text-brand-accent mb-1 block">MAIN CREDENTIAL</span>
                             <h4 class="text-sm md:text-base font-bold text-white leading-tight">Associate AI Engineer for Developers</h4>
                         </div>
-                        <a href="https://www.datacamp.com/completed/statement-of-accomplishment/track/01ac7eb59960d918843ff347c9662c6ddb38cdf8" target="_blank" class="px-3 py-1.5 bg-brand-accent/20 border border-brand-accent text-brand-accent text-[9px] tracking-widest uppercase hover:bg-brand-accent hover:text-white transition-all backdrop-blur-md">
+                        <a href="https://www.datacamp.com/completed/statement-of-accomplishment/track/01ac7eb59960d918843ff347c9662c6ddb38cdf8" target="_blank" class="px-3 py-1.5 bg-brand-accent/20 border border-brand-accent text-brand-accent text-[9px] tracking-widest uppercase hover:bg-brand-accent hover:text-white transition-all md:backdrop-blur-md">
                             Verifikasi
                         </a>
                     </div>
@@ -497,12 +500,12 @@
                 <div class="w-80 md:w-[26rem] h-56 md:h-64 snap-center shrink-0 group relative overflow-hidden bg-brand-surface border border-brand-line hover:border-brand-accent/50 transition-all duration-500 rounded-sm">
                     <img onclick="openCertModal(this.src)" src="{% static 'images/certificate/Sertifikasi_Associate_Engineer.webp' %}" alt="Associate Engineer" class="cursor-zoom-in cursor-pointer w-full h-full object-cover opacity-70 group-hover:opacity-100 group-hover:scale-105 transition-all duration-700">
                     <div class="absolute inset-0 bg-gradient-to-t from-[#111111] via-transparent to-transparent opacity-80"></div>
-                    <button onclick="openCertModal(this.closest('.group').querySelector('img').src)" class="absolute top-4 right-4 w-8 h-8 flex items-center justify-center bg-black/50 border border-white/10 rounded-full text-white/70 hover:text-white hover:bg-brand-accent/80 hover:scale-110 hover:border-brand-accent transition-all backdrop-blur-md z-10" title="Perbesar">
+                    <button onclick="openCertModal(this.closest('.group').querySelector('img').src)" class="absolute top-4 right-4 w-8 h-8 flex items-center justify-center bg-black/50 border border-white/10 rounded-full text-white/70 hover:text-white hover:bg-brand-accent/80 hover:scale-110 hover:border-brand-accent transition-all md:backdrop-blur-md z-10" title="Perbesar">
                         <i class="ph-bold ph-arrows-out text-sm"></i>
                     </button>
                     <div class="absolute bottom-0 w-full p-4 flex justify-between items-end">
                         <h4 class="text-sm md:text-base font-bold text-white leading-tight w-2/3">Associate Engineer</h4>
-                        <a href="https://www.datacamp.com/completed/statement-of-accomplishment/track/01ac7eb59960d918843ff347c9662c6ddb38cdf8" target="_blank" class="px-3 py-1.5 bg-brand-accent/20 border border-brand-accent text-brand-accent text-[9px] tracking-widest uppercase hover:bg-brand-accent hover:text-white transition-all backdrop-blur-md">
+                        <a href="https://www.datacamp.com/completed/statement-of-accomplishment/track/01ac7eb59960d918843ff347c9662c6ddb38cdf8" target="_blank" class="px-3 py-1.5 bg-brand-accent/20 border border-brand-accent text-brand-accent text-[9px] tracking-widest uppercase hover:bg-brand-accent hover:text-white transition-all md:backdrop-blur-md">
                             Verifikasi
                         </a>
                     </div>
@@ -511,12 +514,12 @@
                 <div class="w-80 md:w-[26rem] h-56 md:h-64 snap-center shrink-0 group relative overflow-hidden bg-brand-surface border border-brand-line hover:border-brand-accent/50 transition-all duration-500 rounded-sm">
                     <img onclick="openCertModal(this.src)" src="{% static 'images/certificate/intermediate python.webp' %}" alt="Intermediate Python" class="cursor-zoom-in cursor-pointer w-full h-full object-cover opacity-70 group-hover:opacity-100 group-hover:scale-105 transition-all duration-700">
                     <div class="absolute inset-0 bg-gradient-to-t from-[#111111] via-transparent to-transparent opacity-80"></div>
-                    <button onclick="openCertModal(this.closest('.group').querySelector('img').src)" class="absolute top-4 right-4 w-8 h-8 flex items-center justify-center bg-black/50 border border-white/10 rounded-full text-white/70 hover:text-white hover:bg-brand-accent/80 hover:scale-110 hover:border-brand-accent transition-all backdrop-blur-md z-10" title="Perbesar">
+                    <button onclick="openCertModal(this.closest('.group').querySelector('img').src)" class="absolute top-4 right-4 w-8 h-8 flex items-center justify-center bg-black/50 border border-white/10 rounded-full text-white/70 hover:text-white hover:bg-brand-accent/80 hover:scale-110 hover:border-brand-accent transition-all md:backdrop-blur-md z-10" title="Perbesar">
                         <i class="ph-bold ph-arrows-out text-sm"></i>
                     </button>
                     <div class="absolute bottom-0 w-full p-4 flex justify-between items-end">
                         <h4 class="text-sm md:text-base font-bold text-white leading-tight w-2/3">Intermediate Python</h4>
-                        <a href="https://www.datacamp.com/completed/statement-of-accomplishment/course/9e53800455b5645f92fdd1fc59cd276e35a36e56" target="_blank" class="px-3 py-1.5 bg-brand-accent/20 border border-brand-accent text-brand-accent text-[9px] tracking-widest uppercase hover:bg-brand-accent hover:text-white transition-all backdrop-blur-md">
+                        <a href="https://www.datacamp.com/completed/statement-of-accomplishment/course/9e53800455b5645f92fdd1fc59cd276e35a36e56" target="_blank" class="px-3 py-1.5 bg-brand-accent/20 border border-brand-accent text-brand-accent text-[9px] tracking-widest uppercase hover:bg-brand-accent hover:text-white transition-all md:backdrop-blur-md">
                             Verifikasi
                         </a>
                     </div>
@@ -525,12 +528,12 @@
                 <div class="w-80 md:w-[26rem] h-56 md:h-64 shrink-0 group relative overflow-hidden bg-brand-surface border border-brand-line hover:border-brand-accent/50 transition-all duration-500 rounded-sm">
                     <img onclick="openCertModal(this.src)" src="{% static 'images/certificate/Developing LLM Applications with LangChain.webp' %}" alt="LLM Apps with LangChain" class="cursor-zoom-in cursor-pointer w-full h-full object-cover opacity-70 group-hover:opacity-100 group-hover:scale-105 transition-all duration-700">
                     <div class="absolute inset-0 bg-gradient-to-t from-[#111111] via-transparent to-transparent opacity-80"></div>
-                    <button onclick="openCertModal(this.closest('.group').querySelector('img').src)" class="absolute top-4 right-4 w-8 h-8 flex items-center justify-center bg-black/50 border border-white/10 rounded-full text-white/70 hover:text-white hover:bg-brand-accent/80 hover:scale-110 hover:border-brand-accent transition-all backdrop-blur-md z-10" title="Perbesar">
+                    <button onclick="openCertModal(this.closest('.group').querySelector('img').src)" class="absolute top-4 right-4 w-8 h-8 flex items-center justify-center bg-black/50 border border-white/10 rounded-full text-white/70 hover:text-white hover:bg-brand-accent/80 hover:scale-110 hover:border-brand-accent transition-all md:backdrop-blur-md z-10" title="Perbesar">
                         <i class="ph-bold ph-arrows-out text-sm"></i>
                     </button>
                     <div class="absolute bottom-0 w-full p-4 flex justify-between items-end">
                         <h4 class="text-sm md:text-base font-bold text-white leading-tight w-2/3">LLM Apps with LangChain</h4>
-                        <a href="https://www.datacamp.com/completed/statement-of-accomplishment/course/6ca1c96edc92625cc0dd49cfb341798cbda8509b" target="_blank" class="px-3 py-1.5 bg-brand-accent/20 border border-brand-accent text-brand-accent text-[9px] tracking-widest uppercase hover:bg-brand-accent hover:text-white transition-all backdrop-blur-md">
+                        <a href="https://www.datacamp.com/completed/statement-of-accomplishment/course/6ca1c96edc92625cc0dd49cfb341798cbda8509b" target="_blank" class="px-3 py-1.5 bg-brand-accent/20 border border-brand-accent text-brand-accent text-[9px] tracking-widest uppercase hover:bg-brand-accent hover:text-white transition-all md:backdrop-blur-md">
                             Verifikasi
                         </a>
                     </div>
@@ -539,12 +542,12 @@
                 <div class="w-80 md:w-[26rem] h-56 md:h-64 shrink-0 group relative overflow-hidden bg-brand-surface border border-brand-line hover:border-brand-accent/50 transition-all duration-500 rounded-sm">
                     <img onclick="openCertModal(this.src)" src="{% static 'images/certificate/Building AI Applications with Pinecone.webp' %}" alt="Building AI with Pinecone" class="cursor-zoom-in cursor-pointer w-full h-full object-cover opacity-70 group-hover:opacity-100 group-hover:scale-105 transition-all duration-700">
                     <div class="absolute inset-0 bg-gradient-to-t from-[#111111] via-transparent to-transparent opacity-80"></div>
-                    <button onclick="openCertModal(this.closest('.group').querySelector('img').src)" class="absolute top-4 right-4 w-8 h-8 flex items-center justify-center bg-black/50 border border-white/10 rounded-full text-white/70 hover:text-white hover:bg-brand-accent/80 hover:scale-110 hover:border-brand-accent transition-all backdrop-blur-md z-10" title="Perbesar">
+                    <button onclick="openCertModal(this.closest('.group').querySelector('img').src)" class="absolute top-4 right-4 w-8 h-8 flex items-center justify-center bg-black/50 border border-white/10 rounded-full text-white/70 hover:text-white hover:bg-brand-accent/80 hover:scale-110 hover:border-brand-accent transition-all md:backdrop-blur-md z-10" title="Perbesar">
                         <i class="ph-bold ph-arrows-out text-sm"></i>
                     </button>
                     <div class="absolute bottom-0 w-full p-4 flex justify-between items-end">
                         <h4 class="text-sm md:text-base font-bold text-white leading-tight w-2/3">Building AI with Pinecone</h4>
-                        <a href="https://www.datacamp.com/completed/statement-of-accomplishment/course/50975b2ddc4a00ff0a1ce138c5db26e38c092d5e" target="_blank" class="px-3 py-1.5 bg-brand-accent/20 border border-brand-accent text-brand-accent text-[9px] tracking-widest uppercase hover:bg-brand-accent hover:text-white transition-all backdrop-blur-md">
+                        <a href="https://www.datacamp.com/completed/statement-of-accomplishment/course/50975b2ddc4a00ff0a1ce138c5db26e38c092d5e" target="_blank" class="px-3 py-1.5 bg-brand-accent/20 border border-brand-accent text-brand-accent text-[9px] tracking-widest uppercase hover:bg-brand-accent hover:text-white transition-all md:backdrop-blur-md">
                             Verifikasi
                         </a>
                     </div>
@@ -553,12 +556,12 @@
                 <div class="w-80 md:w-[26rem] h-56 md:h-64 shrink-0 group relative overflow-hidden bg-brand-surface border border-brand-line hover:border-brand-accent/50 transition-all duration-500 rounded-sm">
                     <img onclick="openCertModal(this.src)" src="{% static 'images/certificate/Introduction to Model Context Protocol.webp' %}" alt="Model Context Protocol" class="cursor-zoom-in cursor-pointer w-full h-full object-cover opacity-70 group-hover:opacity-100 group-hover:scale-105 transition-all duration-700">
                     <div class="absolute inset-0 bg-gradient-to-t from-[#111111] via-transparent to-transparent opacity-80"></div>
-                    <button onclick="openCertModal(this.closest('.group').querySelector('img').src)" class="absolute top-4 right-4 w-8 h-8 flex items-center justify-center bg-black/50 border border-white/10 rounded-full text-white/70 hover:text-white hover:bg-brand-accent/80 hover:scale-110 hover:border-brand-accent transition-all backdrop-blur-md z-10" title="Perbesar">
+                    <button onclick="openCertModal(this.closest('.group').querySelector('img').src)" class="absolute top-4 right-4 w-8 h-8 flex items-center justify-center bg-black/50 border border-white/10 rounded-full text-white/70 hover:text-white hover:bg-brand-accent/80 hover:scale-110 hover:border-brand-accent transition-all md:backdrop-blur-md z-10" title="Perbesar">
                         <i class="ph-bold ph-arrows-out text-sm"></i>
                     </button>
                     <div class="absolute bottom-0 w-full p-4 flex justify-between items-end">
                         <h4 class="text-sm md:text-base font-bold text-white leading-tight w-2/3">Model Context Protocol</h4>
-                        <a href="https://www.datacamp.com/completed/statement-of-accomplishment/course/485ce2e62144d444a6d8460755607d353ae3f501" target="_blank" class="px-3 py-1.5 bg-brand-accent/20 border border-brand-accent text-brand-accent text-[9px] tracking-widest uppercase hover:bg-brand-accent hover:text-white transition-all backdrop-blur-md">
+                        <a href="https://www.datacamp.com/completed/statement-of-accomplishment/course/485ce2e62144d444a6d8460755607d353ae3f501" target="_blank" class="px-3 py-1.5 bg-brand-accent/20 border border-brand-accent text-brand-accent text-[9px] tracking-widest uppercase hover:bg-brand-accent hover:text-white transition-all md:backdrop-blur-md">
                             Verifikasi
                         </a>
                     </div>
@@ -567,12 +570,12 @@
                 <div class="w-80 md:w-[26rem] h-56 md:h-64 shrink-0 group relative overflow-hidden bg-brand-surface border border-brand-line hover:border-brand-accent/50 transition-all duration-500 rounded-sm">
                     <img onclick="openCertModal(this.src)" src="{% static 'images/certificate/Developing AI Systems with the OpenAI API.webp' %}" alt="Developing AI Systems" class="cursor-zoom-in cursor-pointer w-full h-full object-cover opacity-70 group-hover:opacity-100 group-hover:scale-105 transition-all duration-700">
                     <div class="absolute inset-0 bg-gradient-to-t from-[#111111] via-transparent to-transparent opacity-80"></div>
-                    <button onclick="openCertModal(this.closest('.group').querySelector('img').src)" class="absolute top-4 right-4 w-8 h-8 flex items-center justify-center bg-black/50 border border-white/10 rounded-full text-white/70 hover:text-white hover:bg-brand-accent/80 hover:scale-110 hover:border-brand-accent transition-all backdrop-blur-md z-10" title="Perbesar">
+                    <button onclick="openCertModal(this.closest('.group').querySelector('img').src)" class="absolute top-4 right-4 w-8 h-8 flex items-center justify-center bg-black/50 border border-white/10 rounded-full text-white/70 hover:text-white hover:bg-brand-accent/80 hover:scale-110 hover:border-brand-accent transition-all md:backdrop-blur-md z-10" title="Perbesar">
                         <i class="ph-bold ph-arrows-out text-sm"></i>
                     </button>
                     <div class="absolute bottom-0 w-full p-4 flex justify-between items-end">
                         <h4 class="text-sm md:text-base font-bold text-white leading-tight w-2/3">Developing AI Systems</h4>
-                        <a href="https://www.datacamp.com/completed/statement-of-accomplishment/course/14515d20fdb2ba4025182a54e6d8809224d08b38" target="_blank" class="px-3 py-1.5 bg-brand-accent/20 border border-brand-accent text-brand-accent text-[9px] tracking-widest uppercase hover:bg-brand-accent hover:text-white transition-all backdrop-blur-md">
+                        <a href="https://www.datacamp.com/completed/statement-of-accomplishment/course/14515d20fdb2ba4025182a54e6d8809224d08b38" target="_blank" class="px-3 py-1.5 bg-brand-accent/20 border border-brand-accent text-brand-accent text-[9px] tracking-widest uppercase hover:bg-brand-accent hover:text-white transition-all md:backdrop-blur-md">
                             Verifikasi
                         </a>
                     </div>
@@ -581,12 +584,12 @@
                 <div class="w-80 md:w-[26rem] h-56 md:h-64 shrink-0 group relative overflow-hidden bg-brand-surface border border-brand-line hover:border-brand-accent/50 transition-all duration-500 rounded-sm">
                     <img onclick="openCertModal(this.src)" src="{% static 'images/certificate/LLMOps Concepts.webp' %}" alt="LLMOps Concepts" class="cursor-zoom-in cursor-pointer w-full h-full object-cover opacity-70 group-hover:opacity-100 group-hover:scale-105 transition-all duration-700">
                     <div class="absolute inset-0 bg-gradient-to-t from-[#111111] via-transparent to-transparent opacity-80"></div>
-                    <button onclick="openCertModal(this.closest('.group').querySelector('img').src)" class="absolute top-4 right-4 w-8 h-8 flex items-center justify-center bg-black/50 border border-white/10 rounded-full text-white/70 hover:text-white hover:bg-brand-accent/80 hover:scale-110 hover:border-brand-accent transition-all backdrop-blur-md z-10" title="Perbesar">
+                    <button onclick="openCertModal(this.closest('.group').querySelector('img').src)" class="absolute top-4 right-4 w-8 h-8 flex items-center justify-center bg-black/50 border border-white/10 rounded-full text-white/70 hover:text-white hover:bg-brand-accent/80 hover:scale-110 hover:border-brand-accent transition-all md:backdrop-blur-md z-10" title="Perbesar">
                         <i class="ph-bold ph-arrows-out text-sm"></i>
                     </button>
                     <div class="absolute bottom-0 w-full p-4 flex justify-between items-end">
                         <h4 class="text-sm md:text-base font-bold text-white leading-tight w-2/3">LLMOps Concepts</h4>
-                        <a href="https://www.datacamp.com/completed/statement-of-accomplishment/course/1a45f5a9d98a29bd8c85dd992b9c7d394191e6f0" target="_blank" class="px-3 py-1.5 bg-brand-accent/20 border border-brand-accent text-brand-accent text-[9px] tracking-widest uppercase hover:bg-brand-accent hover:text-white transition-all backdrop-blur-md">
+                        <a href="https://www.datacamp.com/completed/statement-of-accomplishment/course/1a45f5a9d98a29bd8c85dd992b9c7d394191e6f0" target="_blank" class="px-3 py-1.5 bg-brand-accent/20 border border-brand-accent text-brand-accent text-[9px] tracking-widest uppercase hover:bg-brand-accent hover:text-white transition-all md:backdrop-blur-md">
                             Verifikasi
                         </a>
                     </div>
@@ -595,12 +598,12 @@
                 <div class="w-80 md:w-[26rem] h-56 md:h-64 shrink-0 group relative overflow-hidden bg-brand-surface border border-brand-line hover:border-brand-accent/50 transition-all duration-500 rounded-sm">
                     <img onclick="openCertModal(this.src)" src="{% static 'images/certificate/Working with Hugging Face.webp' %}" alt="Working with Hugging Face" class="cursor-zoom-in cursor-pointer w-full h-full object-cover opacity-70 group-hover:opacity-100 group-hover:scale-105 transition-all duration-700">
                     <div class="absolute inset-0 bg-gradient-to-t from-[#111111] via-transparent to-transparent opacity-80"></div>
-                    <button onclick="openCertModal(this.closest('.group').querySelector('img').src)" class="absolute top-4 right-4 w-8 h-8 flex items-center justify-center bg-black/50 border border-white/10 rounded-full text-white/70 hover:text-white hover:bg-brand-accent/80 hover:scale-110 hover:border-brand-accent transition-all backdrop-blur-md z-10" title="Perbesar">
+                    <button onclick="openCertModal(this.closest('.group').querySelector('img').src)" class="absolute top-4 right-4 w-8 h-8 flex items-center justify-center bg-black/50 border border-white/10 rounded-full text-white/70 hover:text-white hover:bg-brand-accent/80 hover:scale-110 hover:border-brand-accent transition-all md:backdrop-blur-md z-10" title="Perbesar">
                         <i class="ph-bold ph-arrows-out text-sm"></i>
                     </button>
                     <div class="absolute bottom-0 w-full p-4 flex justify-between items-end">
                         <h4 class="text-sm md:text-base font-bold text-white leading-tight w-2/3">Working with Hugging Face</h4>
-                        <a href="https://www.datacamp.com/completed/statement-of-accomplishment/course/d5aa7b5e1dd512f6989ee43e8d6675b83505bbef" target="_blank" class="px-3 py-1.5 bg-brand-accent/20 border border-brand-accent text-brand-accent text-[9px] tracking-widest uppercase hover:bg-brand-accent hover:text-white transition-all backdrop-blur-md">
+                        <a href="https://www.datacamp.com/completed/statement-of-accomplishment/course/d5aa7b5e1dd512f6989ee43e8d6675b83505bbef" target="_blank" class="px-3 py-1.5 bg-brand-accent/20 border border-brand-accent text-brand-accent text-[9px] tracking-widest uppercase hover:bg-brand-accent hover:text-white transition-all md:backdrop-blur-md">
                             Verifikasi
                         </a>
                     </div>
@@ -609,12 +612,12 @@
                 <div class="w-80 md:w-[26rem] h-56 md:h-64 shrink-0 group relative overflow-hidden bg-brand-surface border border-brand-line hover:border-brand-accent/50 transition-all duration-500 rounded-sm">
                     <img onclick="openCertModal(this.src)" src="{% static 'images/certificate/Prompt Engineering with the OpenAI API.webp' %}" alt="Prompt Engineering" class="cursor-zoom-in cursor-pointer w-full h-full object-cover opacity-70 group-hover:opacity-100 group-hover:scale-105 transition-all duration-700">
                     <div class="absolute inset-0 bg-gradient-to-t from-[#111111] via-transparent to-transparent opacity-80"></div>
-                    <button onclick="openCertModal(this.closest('.group').querySelector('img').src)" class="absolute top-4 right-4 w-8 h-8 flex items-center justify-center bg-black/50 border border-white/10 rounded-full text-white/70 hover:text-white hover:bg-brand-accent/80 hover:scale-110 hover:border-brand-accent transition-all backdrop-blur-md z-10" title="Perbesar">
+                    <button onclick="openCertModal(this.closest('.group').querySelector('img').src)" class="absolute top-4 right-4 w-8 h-8 flex items-center justify-center bg-black/50 border border-white/10 rounded-full text-white/70 hover:text-white hover:bg-brand-accent/80 hover:scale-110 hover:border-brand-accent transition-all md:backdrop-blur-md z-10" title="Perbesar">
                         <i class="ph-bold ph-arrows-out text-sm"></i>
                     </button>
                     <div class="absolute bottom-0 w-full p-4 flex justify-between items-end">
                         <h4 class="text-sm md:text-base font-bold text-white leading-tight w-2/3">Prompt Engineering</h4>
-                        <a href="https://www.datacamp.com/completed/statement-of-accomplishment/course/4c9b231ec76bd68701f749e94c38c8544e033003" target="_blank" class="px-3 py-1.5 bg-brand-accent/20 border border-brand-accent text-brand-accent text-[9px] tracking-widest uppercase hover:bg-brand-accent hover:text-white transition-all backdrop-blur-md">
+                        <a href="https://www.datacamp.com/completed/statement-of-accomplishment/course/4c9b231ec76bd68701f749e94c38c8544e033003" target="_blank" class="px-3 py-1.5 bg-brand-accent/20 border border-brand-accent text-brand-accent text-[9px] tracking-widest uppercase hover:bg-brand-accent hover:text-white transition-all md:backdrop-blur-md">
                             Verifikasi
                         </a>
                     </div>
@@ -623,12 +626,12 @@
                 <div class="w-80 md:w-[26rem] h-56 md:h-64 shrink-0 group relative overflow-hidden bg-brand-surface border border-brand-line hover:border-brand-accent/50 transition-all duration-500 rounded-sm">
                     <img onclick="openCertModal(this.src)" src="{% static 'images/certificate/Working with the OpenAI API.webp' %}" alt="Working with OpenAI API" class="cursor-zoom-in cursor-pointer w-full h-full object-cover opacity-70 group-hover:opacity-100 group-hover:scale-105 transition-all duration-700">
                     <div class="absolute inset-0 bg-gradient-to-t from-[#111111] via-transparent to-transparent opacity-80"></div>
-                    <button onclick="openCertModal(this.closest('.group').querySelector('img').src)" class="absolute top-4 right-4 w-8 h-8 flex items-center justify-center bg-black/50 border border-white/10 rounded-full text-white/70 hover:text-white hover:bg-brand-accent/80 hover:scale-110 hover:border-brand-accent transition-all backdrop-blur-md z-10" title="Perbesar">
+                    <button onclick="openCertModal(this.closest('.group').querySelector('img').src)" class="absolute top-4 right-4 w-8 h-8 flex items-center justify-center bg-black/50 border border-white/10 rounded-full text-white/70 hover:text-white hover:bg-brand-accent/80 hover:scale-110 hover:border-brand-accent transition-all md:backdrop-blur-md z-10" title="Perbesar">
                         <i class="ph-bold ph-arrows-out text-sm"></i>
                     </button>
                     <div class="absolute bottom-0 w-full p-4 flex justify-between items-end">
                         <h4 class="text-sm md:text-base font-bold text-white leading-tight w-2/3">Working with OpenAI API</h4>
-                        <a href="https://www.datacamp.com/completed/statement-of-accomplishment/course/edd65c5effdfcb2e0d4e392e4e6312003ddac0d9" target="_blank" class="px-3 py-1.5 bg-brand-accent/20 border border-brand-accent text-brand-accent text-[9px] tracking-widest uppercase hover:bg-brand-accent hover:text-white transition-all backdrop-blur-md">
+                        <a href="https://www.datacamp.com/completed/statement-of-accomplishment/course/edd65c5effdfcb2e0d4e392e4e6312003ddac0d9" target="_blank" class="px-3 py-1.5 bg-brand-accent/20 border border-brand-accent text-brand-accent text-[9px] tracking-widest uppercase hover:bg-brand-accent hover:text-white transition-all md:backdrop-blur-md">
                             Verifikasi
                         </a>
                     </div>
@@ -637,12 +640,12 @@
                 <div class="w-80 md:w-[26rem] h-56 md:h-64 shrink-0 group relative overflow-hidden bg-brand-surface border border-brand-line hover:border-brand-accent/50 transition-all duration-500 rounded-sm">
                     <img onclick="openCertModal(this.src)" src="{% static 'images/certificate/Introduction to Embeddings with the OpenAI API.webp' %}" alt="OpenAI Embeddings" class="cursor-zoom-in cursor-pointer w-full h-full object-cover opacity-70 group-hover:opacity-100 group-hover:scale-105 transition-all duration-700">
                     <div class="absolute inset-0 bg-gradient-to-t from-[#111111] via-transparent to-transparent opacity-80"></div>
-                    <button onclick="openCertModal(this.closest('.group').querySelector('img').src)" class="absolute top-4 right-4 w-8 h-8 flex items-center justify-center bg-black/50 border border-white/10 rounded-full text-white/70 hover:text-white hover:bg-brand-accent/80 hover:scale-110 hover:border-brand-accent transition-all backdrop-blur-md z-10" title="Perbesar">
+                    <button onclick="openCertModal(this.closest('.group').querySelector('img').src)" class="absolute top-4 right-4 w-8 h-8 flex items-center justify-center bg-black/50 border border-white/10 rounded-full text-white/70 hover:text-white hover:bg-brand-accent/80 hover:scale-110 hover:border-brand-accent transition-all md:backdrop-blur-md z-10" title="Perbesar">
                         <i class="ph-bold ph-arrows-out text-sm"></i>
                     </button>
                     <div class="absolute bottom-0 w-full p-4 flex justify-between items-end">
                         <h4 class="text-sm md:text-base font-bold text-white leading-tight w-2/3">OpenAI Embeddings</h4>
-                        <a href="https://www.datacamp.com/completed/statement-of-accomplishment/course/28fe89118e5eb4aef66075d71dea6cbb63f0bdec" target="_blank" class="px-3 py-1.5 bg-brand-accent/20 border border-brand-accent text-brand-accent text-[9px] tracking-widest uppercase hover:bg-brand-accent hover:text-white transition-all backdrop-blur-md">
+                        <a href="https://www.datacamp.com/completed/statement-of-accomplishment/course/28fe89118e5eb4aef66075d71dea6cbb63f0bdec" target="_blank" class="px-3 py-1.5 bg-brand-accent/20 border border-brand-accent text-brand-accent text-[9px] tracking-widest uppercase hover:bg-brand-accent hover:text-white transition-all md:backdrop-blur-md">
                             Verifikasi
                         </a>
                     </div>
@@ -651,12 +654,12 @@
                 <div class="w-80 md:w-[26rem] h-56 md:h-64 shrink-0 group relative overflow-hidden bg-brand-surface border border-brand-line hover:border-brand-accent/50 transition-all duration-500 rounded-sm">
                     <img onclick="openCertModal(this.src)" src="{% static 'images/certificate/Software Engineering Principles in Python.webp' %}" alt="Software Eng Principles" class="cursor-zoom-in cursor-pointer w-full h-full object-cover opacity-70 group-hover:opacity-100 group-hover:scale-105 transition-all duration-700">
                     <div class="absolute inset-0 bg-gradient-to-t from-[#111111] via-transparent to-transparent opacity-80"></div>
-                    <button onclick="openCertModal(this.closest('.group').querySelector('img').src)" class="absolute top-4 right-4 w-8 h-8 flex items-center justify-center bg-black/50 border border-white/10 rounded-full text-white/70 hover:text-white hover:bg-brand-accent/80 hover:scale-110 hover:border-brand-accent transition-all backdrop-blur-md z-10" title="Perbesar">
+                    <button onclick="openCertModal(this.closest('.group').querySelector('img').src)" class="absolute top-4 right-4 w-8 h-8 flex items-center justify-center bg-black/50 border border-white/10 rounded-full text-white/70 hover:text-white hover:bg-brand-accent/80 hover:scale-110 hover:border-brand-accent transition-all md:backdrop-blur-md z-10" title="Perbesar">
                         <i class="ph-bold ph-arrows-out text-sm"></i>
                     </button>
                     <div class="absolute bottom-0 w-full p-4 flex justify-between items-end">
                         <h4 class="text-sm md:text-base font-bold text-white leading-tight w-2/3">Software Eng Principles</h4>
-                        <a href="https://www.datacamp.com/completed/statement-of-accomplishment/course/00771f8c7531ec49af1ce0aabc44a4a872d6dd4f" target="_blank" class="px-3 py-1.5 bg-brand-accent/20 border border-brand-accent text-brand-accent text-[9px] tracking-widest uppercase hover:bg-brand-accent hover:text-white transition-all backdrop-blur-md">
+                        <a href="https://www.datacamp.com/completed/statement-of-accomplishment/course/00771f8c7531ec49af1ce0aabc44a4a872d6dd4f" target="_blank" class="px-3 py-1.5 bg-brand-accent/20 border border-brand-accent text-brand-accent text-[9px] tracking-widest uppercase hover:bg-brand-accent hover:text-white transition-all md:backdrop-blur-md">
                             Verifikasi
                         </a>
                     </div>
@@ -665,12 +668,12 @@
                 <div class="w-80 md:w-[26rem] h-56 md:h-64 shrink-0 group relative overflow-hidden bg-brand-surface border border-brand-line hover:border-brand-accent/50 transition-all duration-500 rounded-sm">
                     <img onclick="openCertModal(this.src)" src="{% static 'images/certificate/AI Ethics.webp' %}" alt="AI Ethics" class="cursor-zoom-in cursor-pointer w-full h-full object-cover opacity-70 group-hover:opacity-100 group-hover:scale-105 transition-all duration-700">
                     <div class="absolute inset-0 bg-gradient-to-t from-[#111111] via-transparent to-transparent opacity-80"></div>
-                    <button onclick="openCertModal(this.closest('.group').querySelector('img').src)" class="absolute top-4 right-4 w-8 h-8 flex items-center justify-center bg-black/50 border border-white/10 rounded-full text-white/70 hover:text-white hover:bg-brand-accent/80 hover:scale-110 hover:border-brand-accent transition-all backdrop-blur-md z-10" title="Perbesar">
+                    <button onclick="openCertModal(this.closest('.group').querySelector('img').src)" class="absolute top-4 right-4 w-8 h-8 flex items-center justify-center bg-black/50 border border-white/10 rounded-full text-white/70 hover:text-white hover:bg-brand-accent/80 hover:scale-110 hover:border-brand-accent transition-all md:backdrop-blur-md z-10" title="Perbesar">
                         <i class="ph-bold ph-arrows-out text-sm"></i>
                     </button>
                     <div class="absolute bottom-0 w-full p-4 flex justify-between items-end">
                         <h4 class="text-sm md:text-base font-bold text-white leading-tight w-2/3">AI Ethics</h4>
-                        <a href="https://www.datacamp.com/completed/statement-of-accomplishment/course/6ba29a76ff96f4964109371d81dc3a46396fed87" target="_blank" class="px-3 py-1.5 bg-brand-accent/20 border border-brand-accent text-brand-accent text-[9px] tracking-widest uppercase hover:bg-brand-accent hover:text-white transition-all backdrop-blur-md">
+                        <a href="https://www.datacamp.com/completed/statement-of-accomplishment/course/6ba29a76ff96f4964109371d81dc3a46396fed87" target="_blank" class="px-3 py-1.5 bg-brand-accent/20 border border-brand-accent text-brand-accent text-[9px] tracking-widest uppercase hover:bg-brand-accent hover:text-white transition-all md:backdrop-blur-md">
                             Verifikasi
                         </a>
                     </div>
@@ -679,12 +682,12 @@
                 <div class="w-80 md:w-[26rem] h-56 md:h-64 shrink-0 group relative overflow-hidden bg-brand-surface border border-brand-line hover:border-brand-accent/50 transition-all duration-500 rounded-sm">
                     <img onclick="openCertModal(this.src)" src="{% static 'images/certificate/Introduction to Data Privacy.webp' %}" alt="Data Privacy" class="cursor-zoom-in cursor-pointer w-full h-full object-cover opacity-70 group-hover:opacity-100 group-hover:scale-105 transition-all duration-700">
                     <div class="absolute inset-0 bg-gradient-to-t from-[#111111] via-transparent to-transparent opacity-80"></div>
-                    <button onclick="openCertModal(this.closest('.group').querySelector('img').src)" class="absolute top-4 right-4 w-8 h-8 flex items-center justify-center bg-black/50 border border-white/10 rounded-full text-white/70 hover:text-white hover:bg-brand-accent/80 hover:scale-110 hover:border-brand-accent transition-all backdrop-blur-md z-10" title="Perbesar">
+                    <button onclick="openCertModal(this.closest('.group').querySelector('img').src)" class="absolute top-4 right-4 w-8 h-8 flex items-center justify-center bg-black/50 border border-white/10 rounded-full text-white/70 hover:text-white hover:bg-brand-accent/80 hover:scale-110 hover:border-brand-accent transition-all md:backdrop-blur-md z-10" title="Perbesar">
                         <i class="ph-bold ph-arrows-out text-sm"></i>
                     </button>
                     <div class="absolute bottom-0 w-full p-4 flex justify-between items-end">
                         <h4 class="text-sm md:text-base font-bold text-white leading-tight w-2/3">Data Privacy</h4>
-                        <a href="https://www.datacamp.com/completed/statement-of-accomplishment/course/43469d33fbd6a33c29962c0fe5e32eb7c0f7cc7d" target="_blank" class="px-3 py-1.5 bg-brand-accent/20 border border-brand-accent text-brand-accent text-[9px] tracking-widest uppercase hover:bg-brand-accent hover:text-white transition-all backdrop-blur-md">
+                        <a href="https://www.datacamp.com/completed/statement-of-accomplishment/course/43469d33fbd6a33c29962c0fe5e32eb7c0f7cc7d" target="_blank" class="px-3 py-1.5 bg-brand-accent/20 border border-brand-accent text-brand-accent text-[9px] tracking-widest uppercase hover:bg-brand-accent hover:text-white transition-all md:backdrop-blur-md">
                             Verifikasi
                         </a>
                     </div>
@@ -781,7 +784,7 @@
     </section>
 
     <section id="skills" class="py-24 relative z-10 border-t border-brand-line bg-brand-bg overflow-hidden">
-        <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[300px] bg-brand-accent/5 rounded-full blur-[100px] pointer-events-none"></div>
+        <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[300px] bg-brand-accent/5 rounded-full blur-[100px] hidden md:block pointer-events-none"></div>
 
         <div class="max-w-7xl mx-auto px-6 lg:px-8 relative z-10">
             <div class="text-center mb-16">
@@ -1012,13 +1015,13 @@
     <!-- Certificate Zoom Modal -->
     <div id="certModal" class="fixed inset-0 z-[100] hidden flex-col items-center justify-center p-4 sm:p-8">
         <!-- Backdrop -->
-        <div class="absolute inset-0 bg-[#111111]/90 backdrop-blur-xl transition-opacity opacity-0 duration-300" id="certModalBackdrop" onclick="closeCertModal()"></div>
+        <div class="absolute inset-0 bg-[#111111]/90 md:backdrop-blur-xl transition-opacity opacity-0 duration-300" id="certModalBackdrop" onclick="closeCertModal()"></div>
         
         <!-- Modal Content -->
         <div class="relative z-10 w-full max-w-5xl max-h-full flex flex-col items-center transition-all transform scale-95 opacity-0 duration-300" id="certModalContent">
             <!-- Close Button -->
             <div class="w-full flex justify-end mb-2 md:mb-4">
-                <button onclick="closeCertModal()" class="text-brand-muted hover:text-white transition-all p-2 group bg-brand-bg/50 rounded-full hover:bg-brand-accent/20 backdrop-blur-md border border-brand-line hover:border-brand-accent z-20">
+                <button onclick="closeCertModal()" class="text-brand-muted hover:text-white transition-all p-2 group bg-brand-bg/50 rounded-full hover:bg-brand-accent/20 md:backdrop-blur-md border border-brand-line hover:border-brand-accent z-20">
                     <i class="ph ph-x text-xl group-hover:rotate-90 transition-transform duration-300"></i>
                 </button>
             </div>
@@ -1101,13 +1104,13 @@
     <!-- YouTube Lightbox Modal -->
     <div id="youtubeModal" class="fixed inset-0 z-[100] hidden flex-col items-center justify-center p-4 sm:p-8">
         <!-- Backdrop -->
-        <div class="absolute inset-0 bg-[#111111]/95 backdrop-blur-xl transition-opacity opacity-0 duration-300" id="ytModalBackdrop" onclick="closeYoutubeModal()"></div>
+        <div class="absolute inset-0 bg-[#111111]/95 md:backdrop-blur-xl transition-opacity opacity-0 duration-300" id="ytModalBackdrop" onclick="closeYoutubeModal()"></div>
         
         <!-- Modal Content -->
         <div class="relative z-10 w-full max-w-5xl transition-all transform scale-95 opacity-0 duration-300" id="ytModalContent">
             <!-- Close Button -->
             <div class="w-full flex justify-end mb-4">
-                <button onclick="closeYoutubeModal()" class="text-brand-muted hover:text-white transition-all p-2 group bg-brand-bg/50 rounded-full hover:bg-brand-accent/20 backdrop-blur-md border border-brand-line hover:border-brand-accent z-20 shadow-lg">
+                <button onclick="closeYoutubeModal()" class="text-brand-muted hover:text-white transition-all p-2 group bg-brand-bg/50 rounded-full hover:bg-brand-accent/20 md:backdrop-blur-md border border-brand-line hover:border-brand-accent z-20 shadow-lg">
                     <i class="ph ph-x text-xl group-hover:rotate-90 transition-transform duration-300"></i>
                 </button>
             </div>
