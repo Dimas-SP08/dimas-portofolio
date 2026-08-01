@@ -12,20 +12,24 @@ https://docs.djangoproject.com/en/5.2/ref/settings/
 
 from pathlib import Path
 import os
+from dotenv import load_dotenv
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
+
+# Load environment variables from .env
+load_dotenv(os.path.join(BASE_DIR, '.env'))
 
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/5.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-n(e%0^0g)onj+6ur)dfe2%fy73fd8$2ezfj*=l(*-sa6051kb='
+SECRET_KEY = os.environ.get('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
 # Ubah ke True saat ngoding lokal agar gambar dan CSS muncul. Ubah ke False sebelum push ke GitHub/Render!
-DEBUG = False
+DEBUG = os.environ.get('DEBUG') == 'True'
 
 # Masukin domain lo dan domain render
 ALLOWED_HOSTS = ['dimas-sp.me', 'www.dimas-sp.me', '.onrender.com', 'localhost', '127.0.0.1']
