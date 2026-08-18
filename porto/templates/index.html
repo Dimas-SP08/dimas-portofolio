@@ -103,7 +103,7 @@
                         <a href="#about" class="text-brand-muted hover:text-brand-accent text-xs tracking-widest uppercase transition-colors">{% trans "Tentang" %}</a>
                         <a href="#projects" class="text-brand-muted hover:text-brand-accent text-xs tracking-widest uppercase transition-colors">{% trans "Karya" %}</a>
                         <a href="#certificates" class="text-brand-muted hover:text-brand-accent text-xs tracking-widest uppercase transition-colors">{% trans "Sertifikat" %}</a>
-                        <a href="#services" class="text-brand-muted hover:text-brand-accent text-xs tracking-widest uppercase transition-colors">{% trans "Layanan" %}</a>
+                        {% comment %} <a href="#services" class="text-brand-muted hover:text-brand-accent text-xs tracking-widest uppercase transition-colors">{% trans "Layanan" %}</a> {% endcomment %}
                         <a href="#skills" class="text-brand-muted hover:text-brand-accent text-xs tracking-widest uppercase transition-colors">{% trans "Keahlian" %}</a>
                         <a href="#contact" class="text-brand-accent hover:text-white text-xs tracking-widest uppercase transition-colors">{% trans "Kontak" %}</a>
                         
@@ -145,7 +145,7 @@
                 <a href="#about" class="mobile-link text-base tracking-widest text-brand-muted uppercase hover:text-brand-accent transition-colors">{% trans "Tentang" %}</a>
                 <a href="#projects" class="mobile-link text-base tracking-widest text-brand-muted uppercase hover:text-brand-accent transition-colors">{% trans "Karya" %}</a>
                 <a href="#certificates" class="mobile-link text-base tracking-widest text-brand-muted uppercase hover:text-brand-accent transition-colors">{% trans "Sertifikat" %}</a>
-                <a href="#services" class="mobile-link text-base tracking-widest text-brand-muted uppercase hover:text-brand-accent transition-colors">{% trans "Layanan" %}</a>
+                {% comment %} <a href="#services" class="mobile-link text-base tracking-widest text-brand-muted uppercase hover:text-brand-accent transition-colors">{% trans "Layanan" %}</a> {% endcomment %}
                 <a href="#skills" class="mobile-link text-base tracking-widest text-brand-muted uppercase hover:text-brand-accent transition-colors">{% trans "Keahlian" %}</a>
                 <a href="#contact" class="mobile-link text-base tracking-widest text-brand-accent uppercase hover:text-white transition-colors">{% trans "Kontak" %}</a>
                 
@@ -205,15 +205,7 @@
                         
                         <div class="absolute inset-x-0 bottom-0 h-1/2 bg-gradient-to-t from-[#111111] to-transparent opacity-90 pointer-events-none"></div>
                         
-                        <div class="absolute bottom-6 left-6 flex items-center gap-3">
-                            <span class="relative flex h-3 w-3">
-                                <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-brand-accent opacity-75"></span>
-                                <span class="relative inline-flex rounded-full h-3 w-3 bg-brand-accent"></span>
-                            </span>
-                            <span class="text-[10px] tracking-widest uppercase text-white font-mono bg-black/40 px-3 py-1.5 md:backdrop-blur-md border border-white/10 rounded-sm">
-                                {% trans "Siap Bekerja Sama" %}
-                            </span>
-                        </div>
+                        
 
                     </div>
                 </div>
@@ -707,7 +699,7 @@
         </div>
     
 
-    <section id="services" class="py-24 relative z-10 border-t border-brand-line bg-brand-surface">
+    {% comment %} <section id="services" class="py-24 relative z-10 border-t border-brand-line bg-brand-surface">
         <div class="max-w-7xl mx-auto px-6 lg:px-8">
             <div class="mb-16 flex flex-col md:flex-row md:items-end justify-between gap-8">
                 <div>
@@ -789,7 +781,7 @@
 
             </div>
         </div>
-    </section>
+    </section> {% endcomment %}
 
     <section id="skills" class="py-24 relative z-10 border-t border-brand-line bg-brand-bg overflow-hidden">
         <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[300px] bg-brand-accent/5 rounded-full blur-[100px] hidden md:block pointer-events-none"></div>
